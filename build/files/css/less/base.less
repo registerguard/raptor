@@ -1,0 +1,216 @@
+#bd_ear { display: none; }
+@media only screen and (min-width: 1005px) {
+	#bd_ear:before, #bd_ear:after { content: " "; display: table; } #bd_ear:after { clear: both; } #bd_ear { *zoom: 1; }
+	#bd_ear,
+	#bd_ear li {
+		margin: 0;
+		padding: 0;
+	}
+	#bd_ear {
+		font: .813em/1.8450184501845 Arial, sans-serif; /* 13px */
+		text-transform: uppercase;
+		list-style: none;
+		margin: 10px 0 15px -20px;
+		display: block;
+		position: relative;
+		z-index: 20;
+	}
+		#bd_ear li {
+			margin-left: 20px;
+			float: right;
+			display: inline;
+		}
+		#bd_ear li:first-child { float: left; }
+		#bd_ear li a {
+			color: #000;
+			text-decoration: none;
+		}
+		#bd_ear li a:visited { color: #000; }
+		#bd_ear li a:visited:hover,
+		#bd_ear li a:focus,
+		#bd_ear li a:focus:hover,
+		#bd_ear li a:hover,
+		#bd_ear li a:active {
+			color: #000;
+			text-decoration: underline;
+		}
+}
+
+#bd_masthead {
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0;
+	position: relative;
+	z-index: 10;
+}
+@media only screen and (min-width: 1005px) {
+	#bd_masthead {
+		padding: 0;
+		border-bottom: 0;
+	}
+}
+
+#bd_flag {
+	font: 1.875em/1 "RGWeb", Cambria, Georgia, serif; /* 30px */
+	color: #000;
+	margin: 0;
+	white-space: nowrap;
+	position: absolute;
+	top: 20px;
+	left: 0;
+}
+.no-js #bd_flag {
+	position: static;
+	margin-bottom: 10px;
+}
+	#bd_flag a,
+	#bd_flag a:visited,
+	#bd_flag a:visited:hover,
+	#bd_flag a:focus,
+	#bd_flag a:focus:hover,
+	#bd_flag a:hover,
+	#bd_flag a:active {
+		color: #000;
+		text-decoration: none;
+	}
+@media only screen and (min-width: 665px) {
+	#bd_flag {
+		font-size: 2.5em; /* 40px */
+		top: 12px;
+	}
+}
+@media only screen and (min-width: 1005px) {
+	#bd_flag {
+		font-size: 3.125em; /* 50px */
+		position: static;
+		margin-bottom: 20px;
+	}
+}
+
+#bd_proof { *zoom: 1; } #bd_proof:before, #bd_proof:after { content: " "; display: table; } #bd_proof:after { clear: both; }
+#bd_proof {
+	font-family: Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.5em;
+	min-height: 49px;
+	_height: 49px;
+}
+
+@media only screen and (min-width: 1005px) {
+	#bd_proof {
+		min-height: auto;
+		height: auto;
+	}
+}
+
+#bd_banner_top { border-bottom: 1px solid #ccc; }
+#bd_banner_bottom { border-top: 1px solid #ccc; }
+.bd_banner { padding: 5px 0; }
+	.bd_banner .advert { margin: 0 auto; }
+@media only screen and (min-width: 665px) {
+	.bd_banner { padding: 10px 0; }
+}
+
+#bd_content {}
+
+#bd_morgue {
+	border-top: 1px solid #ccc;
+	padding: 10px 0 0;
+}
+
+.js #bd_morgue ul {
+	display: none;
+	visibility: hidden;
+}
+@media only screen and (min-width: 665px) {
+	.js #bd_morgue ul {
+		display: block;
+		visibility: visible;
+	}
+}
+
+#bd_press {
+	border-top: 1px solid #ccc;
+	margin: 0 0 10px;
+	padding: 10px 0;
+	position: relative;
+}
+	#bd_press p {
+		font: .688em/2.18023255813953 Arial, sans-serif; /* 11px */
+		text-transform: uppercase;
+		letter-spacing: .05em;
+		color: #999;
+		margin: 0;
+		padding: 0;
+	}
+			#bd_press span { display: block; }
+			#bd_press span span { display: none; }
+	#bd_press a {
+		color: #666;
+		text-decoration: none;
+	}
+	#bd_press a:visited { color: #666; }
+	#bd_press a:visited:hover,
+	#bd_press a:focus,
+	#bd_press a:focus:hover,
+	#bd_press a:hover,
+	#bd_press a:active {
+		color: #000;
+		text-decoration: underline;
+	}
+@media only screen and (min-width: 665px) {
+	#bd_press span,
+	#bd_press span span { display: inline; }
+}
+
+.bd_scoop {
+	font-size: 1em;
+	line-height: 1.5em;
+	margin: 0 0 10px;
+	padding: 0;
+	list-style: none;
+}
+	.bd_scoop li {
+		/* (((1.5 / .813) = 1.8450184501845) * .75) = 1.38376383763838 */
+		font: .813em/1.38376383763838 Arial, sans-serif; /* 13px */
+		text-transform: uppercase;
+		letter-spacing: .1em;
+		letter-spacing: .03em;
+		word-spacing: .3em;
+		margin: 0 0 10px;
+		padding: 0;
+	}
+		.bd_scoop li a {
+			color: #666;
+			text-decoration: none;
+		}
+		.bd_scoop li a:visited { color: #666; }
+		.bd_scoop li a:visited:hover,
+		.bd_scoop li a:focus,
+		.bd_scoop li a:focus:hover,
+		.bd_scoop li a:hover,
+		.bd_scoop li a:active {
+			color: #000;
+			text-decoration: underline;
+		}
+
+.bd_insert {
+	font: bold 1.125em/1.33333333333333 "BentonSansCond Regular", Arial, sans-serif; /* 18px */
+	letter-spacing: .02em;
+	color: #333;
+	margin: 0 0 10px;
+}
+	.bd_insert a:link,
+	.bd_insert a:visited { color: #333; }
+
+.bd_cut {
+	border: 0;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	position: absolute;
+	clip: rect(0 0 0 0);
+}
+
+.bd_filler { padding: 10px; }

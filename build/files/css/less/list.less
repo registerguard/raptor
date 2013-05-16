@@ -1,0 +1,92 @@
+/**
+ * Default list styling.
+ *
+ * Note to self:
+ * I want to avoid setting a font size on list defaults because, unlike 
+ * `<p>` tag style, this affects too much stuff.
+ */
+
+ul,
+ol,
+dl,
+dt,
+dd {
+	margin: 0;
+	padding: 0;
+}
+	ul,
+	ol,
+	dl { margin: 0 0 10px; }
+		dl dt { font-weight: bold; }
+		ul ul,
+		ul ol,
+		ul dl,
+		ol ul,
+		ol ol,
+		ol dl,
+		dl ol,
+		dl ul {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+			ul li,
+			dl dd { margin-left: 2em; }
+			ol li { margin-left: 2.5em; } /* Need a bit more elbow room for the higher numbers. */
+
+.li1,
+.li1 li {
+	margin: 0;
+	padding: 0;
+}
+.li1 { margin: 0 0 10px; }
+	.li1 li {
+		font-family: "MillerHeadline Bold", Cambria, Georgia, serif;
+		font-size: 1em; /* 16px */
+		font-weight: bold;
+		line-height: 1.125; /* (((1.5 / 1) = 1.5) * .75) = 1.125 */
+		letter-spacing: .01em;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: #ddd;
+		list-style: none;
+		margin-bottom: -1px;
+		padding: .25em 0;
+	}
+	/* A tad bigger: */
+	.li1.alt1 { /* What's a better name than "alt1"? */
+		font-size: 1.125em;
+		line-height: 1.33333333333333;
+	}
+
+.li2 {}
+	.li2 li {
+		font-family: Arial, sans-serif;
+		font-size: .875em;
+		line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+		margin-bottom: .21428571428572em; /* (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572 */
+	}
+	.li2 li li {
+		font-size: inherit; /* So things don't get smaller the deeper they are nested. */
+		margin-top: .21428571428572em; /* Evens out the vertical spacing. */
+	}
+
+.li3,
+.li3 li {
+	margin: 0;
+	padding: 0;
+}
+	.li3 {
+		list-style: none;
+		font-size: 1em;
+		line-height: 1.5em;
+		margin: 0 0 10px;
+	}
+		.li3 li {
+			border-width: 1px 0;
+			border-style: solid;
+			border-color: #ddd;
+			margin: -1px 0 0;
+			padding: 5px 0;
+		}
+		.li3 li:first-child { border-top: none; }
+		.li3 li:last-child { border-bottom: none; }
