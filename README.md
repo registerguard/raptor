@@ -1,9 +1,20 @@
-# Bulldog
+# F-22 Raptor
 
-### The official 2013 registerguard.com theme.
+### The non-news sub-theme for The Register-Guard.
+
+![Come at me bro!](build/files/img/junk/f22-raptor.png)
+
+---
+
+### Info
+
+**Namespace:** `f22`   
+**Awesome?:** `yes!`
+
+*More info coming soon*
 
 ---
 
 #### LEGAL
 
-Copyright &copy; 2013 [Micky Hulse](http://hulse.me)/[The Register-Guard](http://www.registerguard.com)
+Copyright &copy; 2013 [Patrick Sullivan](http://psullivan6.com) / [The Register-Guard](http://www.registerguard.com)
