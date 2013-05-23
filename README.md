@@ -2,7 +2,7 @@
 
 ### The non-news sub-theme for The Register-Guard.
 
-![Come at me bro!](build/files/img/junk/f22-raptor.png)
+![Come at me bro!](http://peacethroughvictory.files.wordpress.com/2011/09/f22_raptor_l8.jpg)
 
 ---
 
@@ -17,4 +17,4 @@
 
 #### LEGAL
 
-Copyright &copy; 2013 [Patrick Sullivan](http://psullivan6.com) / [The Register-Guard](http://www.registerguard.com)
+Copyright &copy; 2013 [Patrick Sullivan](http://psullivan6.com)/[The Register-Guard](http://www.registerguard.com)
