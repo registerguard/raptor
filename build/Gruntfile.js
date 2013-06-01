@@ -17,8 +17,6 @@ module.exports = function(grunt) {
 		
 		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
 		
-		ver : 1,
-		
 		/*----------------------------------( WATCH )----------------------------------*/
 		
 		/**
@@ -36,8 +34,9 @@ module.exports = function(grunt) {
 				
 				files : [
 					
-					'./files/tmpl/*.html',
-					'./files/css/less/*.less'
+					'./files/css/less/**/*',
+					'./files/tmpl/**/*',
+					'./files/js/**/*'
 					
 				],
 				
@@ -105,7 +104,7 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( 01 )----------------------------------*/
+		/*----------------------------------( CLEAN )----------------------------------*/
 		
 		/**
 		 * Clean files and folders.
@@ -126,7 +125,8 @@ module.exports = function(grunt) {
 				src : [
 					
 					'./files/index.html',
-					'./files/css/<%= pkg.name %>.css'
+					'./files/css/<%= pkg.name %>.css',
+					'../demo/**/*'
 					
 				]
 				
@@ -136,7 +136,8 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/**/*'
+					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/**/*',
+					'../demo/**/*'
 					
 				]
 				
@@ -144,7 +145,7 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( 03 )----------------------------------*/
+		/*----------------------------------( UGLIFY )----------------------------------*/
 		
 		/**
 		 * Minify files with UglifyJS.
@@ -159,23 +160,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/js/preflight.min.js' : [
-						'./files/js/preflight.js'
-					],
-					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/js/html5shiv-printshiv.min.js' : [
-						'./files/js/html5shiv-printshiv.js'
-					],
-					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/js/<%= pkg.name %>.min.js' : [
-						'./files/js/matchMedia.js',
-						'./files/js/jquery.*.js',
-						'./files/js/woof.js',
-						'./files/js/woof.*.js',
-						'./files/js/woof.init.js'
-					],
-					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/js/respond.min.js' : [
+					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/js/respond.min.js' : [
 						'./files/js/respond.src.js',
 						'./files/js/respond.proxy.js'
 					]
@@ -186,7 +171,7 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( 04 )----------------------------------*/
+		/*----------------------------------( LESS )----------------------------------*/
 		
 		/**
 		 * Compile LESS files to CSS.
@@ -206,9 +191,12 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'./files/css/<%= pkg.name %>.css' : [
-						'./files/css/less/<%= pkg.name %>.less',
-						'./files/css/less/dev.less'
+					'./files/css/<%= pkg.name %>.css' : './files/css/less/<%= pkg.name %>.less',
+					'./files/css/demo.css' : [
+						
+						'./files/css/less/demo.less',
+						'./lib/css/**/*'
+						
 					]
 					
 				}
@@ -225,7 +213,8 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/css/<%= pkg.name %>.min.css' : './files/css/less/<%= pkg.name %>.less'
+					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/css/<%= pkg.name %>.min.css' : './files/css/less/<%= pkg.name %>.less',
+					'./files/css/demo.css' : './files/css/less/demo.less'
 					
 				}
 				
@@ -233,7 +222,7 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( 05 )----------------------------------*/
+		/*----------------------------------( COPY )----------------------------------*/
 		
 		/**
 		 * Copy files and folders.
@@ -241,8 +230,43 @@ module.exports = function(grunt) {
 		 * @see https://github.com/gruntjs/grunt-contrib-copy
 		 * @see http://gruntjs.com/configuring-tasks#globbing-patterns
 		 */
-
+		
 		copy : {
+			
+			dev : {
+				
+				files : [
+					
+					{
+						
+						expand : true,
+						cwd : './files/',
+						src : ['img/**'],
+						dest : '../demo/'
+						
+					},
+					
+					{
+						
+						expand : true,
+						cwd : './files/',
+						src : ['css/*.css'],
+						dest : '../demo/'
+						
+					},
+					
+					{
+						
+						expand : true,
+						cwd : './files/',
+						src : ['js/*.js'],
+						dest : '../demo/'
+						
+					}
+					
+				]
+				
+			},
 			
 			pro : {
 				
@@ -252,24 +276,19 @@ module.exports = function(grunt) {
 						
 						expand : true,
 						cwd : './files/',
-						src : [
-							'img/**',
-							'!img/junk/**'
-						],
-						dest : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/'
+						src : ['img/**', 'css/demo.css'],
+						dest : '../demo/'
 						
-					}/*,
+					},
 					
 					{
 						
-						filter : 'isFile',
 						expand : true,
-						cwd : './files/',
-						src : ['index.html'],
-						dest : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/'
+						cwd : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/',
+						src : ['css/<%= pkg.name %>.min.css'],
+						dest : '../demo/'
 						
 					}
-					*/
 					
 				]
 				
@@ -277,7 +296,28 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( 06 )----------------------------------*/
+		/*----------------------------------( INCLUDES )----------------------------------*/
+		
+		/**
+		 * Include other files, like php `include`.
+		 *
+		 * @see https://github.com/vanetix/grunt-includes
+		 */
+		
+		includes: {
+			
+			files: {
+				
+				src: './files/tmpl/index.html', // Source files
+				dest: '../demo', // Destination directory
+				flatten: true,
+				cwd: '.'
+				
+			}
+			
+		},
+		
+		/*----------------------------------( PREPROCESS )----------------------------------*/
 		
 		/**
 		 * Grunt task around preprocess npm module.
@@ -291,7 +331,7 @@ module.exports = function(grunt) {
 			options : {
 				
 				context : {
-					path : '/<%= pkg.name %>/<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>',
+					path : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>',
 					name : '<%= pkg.name %>'
 				}
 				
@@ -299,26 +339,17 @@ module.exports = function(grunt) {
 			
 			dev : {
 				
-				src : './files/tmpl/index.html',
-				dest : './files/index.html'
+				src : '../demo/index.html',
+				dest : '../demo/index.html'
 				
 			},
 			
 			pro : {
 				
-				src : './files/tmpl/index.html',
-				dest : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/<%= ver %>/index.html'
-				
-			}/*,
-			
-			// Testing ability to strip media queries using `@exclude` and `@endexclude`:
-			test : {
-				
-				src : './files/css/less/base.less',
-				dest : './files/css/less/ie/base.less'
+				src : '../demo/index.html',
+				dest : '../demo/index.html'
 				
 			}
-			*/
 			
 		}
 		
@@ -340,6 +371,8 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-preprocess');
 	
+	grunt.loadNpmTasks('grunt-includes');
+	
 	grunt.loadNpmTasks('grunt-env');
 	
 	//----------------------------------
@@ -355,8 +388,8 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('default', ['jshint']);
 	
-	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'preprocess:dev']);
+	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'includes', 'preprocess:dev', 'copy:dev']);
 	
-	grunt.registerTask('pro', ['jshint', 'env:pro', 'clean:pro', 'uglify:pro', 'less:pro', 'copy:pro', 'preprocess:pro']);
+	grunt.registerTask('pro', ['jshint', 'env:pro', 'clean:pro', 'less:pro', 'includes', 'preprocess:pro', 'copy:pro']);
 	
 };

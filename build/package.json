@@ -23,5 +23,7 @@
     "grunt-preprocess": "2.2.0",
     "grunt-env": "0.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "grunt-includes": "~0.2.4"
+  }
 }
