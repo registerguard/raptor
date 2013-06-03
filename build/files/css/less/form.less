@@ -1,0 +1,192 @@
+/* ============================================================
+   Forms
+   ============================================================ */
+	button.f22,
+	input.f22,
+	select.f22,
+	textarea.f22 {
+		font-size: 100%;
+		margin: 0;
+		vertical-align: baseline;
+	}
+	
+	/* ------------------------------
+	   Input
+	   ------------------------------ */
+		input.f22,
+		select.f22{
+			width: 100%;
+			
+			display: inline-block;
+			border: 1px solid #ccc;
+			padding: .75em;
+			border-radius: 3px;
+			font-size: .875em;
+			-webkit-transition: .3s linear border;
+			-moz-transition: .3s linear border;
+			-ms-transition: .3s linear border;
+			-o-transition: .3s linear border;
+			transition: .3s linear border;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			-webkit-font-smoothing: antialiased;
+		}
+			input.f22:focus,
+			select.f22:focus{
+				outline: 0;
+				border-color: #0083CA;
+			}
+			
+			
+			 ::-webkit-input-placeholder { color: red; }
+	:-moz-placeholder { color: red; }
+	::-moz-placeholder { color: red; }
+	:-ms-input-placeholder { color: red; }
+
+
+
+	.f22_form .pure-checkbox,
+	.f22_form .pure-radio {
+		margin: 0.5em 0;
+		display: block;
+	}
+	.f22_form input[disabled],
+	.f22_form select[disabled],
+	.f22_form textarea[disabled],
+	.f22_form input[readonly],
+	.f22_form select[readonly],
+	.f22_form textarea[readonly] {
+		cursor: not-allowed;
+		background-color: #eaeded;
+		color: #cad2d3;
+		border-color: transparent;
+	}
+	.f22_form input:focus:invalid,
+	.f22_form textarea:focus:invalid,
+	.f22_form select:focus:invalid {
+		color: #b94a48;
+		border: 1px solid #ee5f5b;
+	}
+	.f22_form input:focus:invalid:focus,
+	.f22_form textarea:focus:invalid:focus,
+	.f22_form select:focus:invalid:focus {
+		border-color: #e9322d;
+	}
+	.f22_form select {
+		border: 1px solid #ccc;
+		background-color: white;
+	}
+	.f22_form select[multiple] {
+		height: auto;
+	}
+	.f22_form label {
+		margin: 0.5em 0 0.2em;
+		color: #999;
+		font-size:90%;
+	}
+	.f22_form fieldset {
+		margin: 0;
+		padding: 0.35em 0 0.75em;
+		border: 0;
+	}
+	.f22_form legend {
+		display: block;
+		width: 100%;
+		padding: 0.3em 0;
+		margin-bottom: 0.3em;
+		font-size: 125%;
+		color: #333;
+		border-bottom: 1px solid #e5e5e5;
+	}
+
+	.f22_form.f22_form-stacked input[type='text'],
+	.f22_form.f22_form-stacked select,
+	.f22_form.f22_form-stacked label {
+		display: block;
+	}
+
+	.f22_form-aligned input,
+	.f22_form-aligned textarea,
+	.f22_form-aligned select,
+	.f22_form-aligned .pure-help-inline {
+		display: inline-block;
+		*display: inline; /* IE7 inline-block hack */
+		*zoom: 1;
+		vertical-align: middle;
+	}
+
+	/* aligned Forms */
+	.f22_form-aligned .pure-control-group {
+		margin-bottom: 0.5em;
+	}
+	.f22_form-aligned .pure-control-group label {
+		text-align: right;
+		display: inline-block;
+		vertical-align: middle;
+		width: 10em;
+		margin: 0 1em 0 0;
+	}
+	.f22_form-aligned .pure-controls {
+		margin: 1.5em 0 0 10em;
+	}
+
+	/* Rounded Inputs */
+	.f22_form .pure-input-rounded {
+		border-radius: 20px;
+		padding-left:1em;
+	}
+
+	/* Grouped Inputs */
+	.f22_form .pure-group fieldset {
+		margin-bottom: 10px;
+	}
+	.f22_form .pure-group input {
+		display: block;
+		padding: 10px;
+		margin: 0;
+		border-radius: 0;
+		position: relative;
+		top: -1px;
+	}
+	.f22_form .pure-group input:focus {
+		z-index: 2;
+	}
+	.f22_form .pure-group input:first-child {
+		top: 1px;
+		border-radius: 4px 4px 0 0;
+	}
+	.f22_form .pure-group input:last-child {
+		top: -2px;
+		border-radius: 0 0 4px 4px;
+	}
+	.f22_form .pure-group button {
+		margin: 0.35em 0;
+	}
+
+	.f22_form .pure-input-1   { width: 100%; }
+	.f22_form .pure-input-2-3 { width: 66%; }
+	.f22_form .pure-input-1-2 { width: 50%; }
+	.f22_form .pure-input-1-3 { width: 33%; }
+	.f22_form .pure-input-1-4 { width: 25%; }
+
+	/* Inline help for forms */
+	.f22_form .pure-help-inline {
+		display: inline-block;
+		padding-left: 0.3em;
+		color: #666;
+		vertical-align: middle;
+		font-size: 90%;
+	}
+
+/* [B]RAVO */
+@media only screen and (min-width: 665px) {
+	
+	input.f22,
+	select.f22{ width: auto; }
+	
+}
+
+@media only screen and (min-width: 1005px) { } /* [C]HARLIE */
+
+@media only screen and (min-width: 1345px) { } /* [D]ELTA */

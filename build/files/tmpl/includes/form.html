@@ -1,20 +1,15 @@
 <!-- <form class="pure-form" action="http://housing.registerguard.com/homes/search/for-rent" id="fm_rentals" method="post"> -->
 <!-- <form class="pure-form" action="http://jobs.registerguard.com/jobs/search" method="post"> -->
 <!-- <form class="pure-form" action="http://registeredguard.motors.adicio.com/motors/search" method="post"> -->
-<form class="pure-form" action="http://registeredguard.classifieds.adicio.com/g/browse/all/ads" method="post">
+<form class="f22_form" action="http://registeredguard.classifieds.adicio.com/g/browse/all/ads" method="get">
 	
-	<div>
-		<input type="hidden" value="rent" name="terms">
-		<input type="hidden" value="text" name="type">
-	</div>
+	<input class="pure-input-1-4 f22" type="text" name="kwsPrimary" placeholder="Keywords">
 	
-	<input class="pure-input-1-4" type="text" name="kwsPrimary" placeholder="Keywords">
-	
-	<input class="pure-input-1-4" type="text" name="loc" placeholder="City &amp; State or Zip Code">
+	<input class="pure-input-1-4 f22" type="text" name="loc" placeholder="City &amp; State or Zip Code">
 	
 	<label for="radius">
 		
-		<select id="radius" name="radius">
+		<select class="f22" id="radius" name="radius">
 			<option value="1">1</option>
 			<option value="5">5</option>
 			<option value="10">10</option>
@@ -29,6 +24,46 @@
 		
 	</label>
 	
-	<input class="pure-input-1-4" type="submit" value="Search" class="pure-button">
+	<input class="pure-input-1-4 pure-button" type="submit" value="Search">
+	
+</form>
+
+<form action="http://registeredguard.classifieds.adicio.com/g/browse/all/ads" method="get">
+	
+	<div class="w_line">
+		
+		<div class="w_unit w_A1of2 w_C1of3">
+			
+			<div class="m10">
+				
+				<input class="f22" type="text" name="fm_keywords" id="fm_keywords" placeholder="Keywords">
+				
+			</div>
+			
+		</div> <!-- /.w_unit -->
+		
+		<div class="w_unit w_A1of2 w_C1of3">
+			
+			<div class="m10">
+				
+				<input class="pure-input-1-4 f22" type="text" name="loc" placeholder="City &amp; State or Zip Code">
+				
+			</div>
+			
+		</div> <!-- /.w_unit -->
+		
+		<div class="w_unit w_C1of3">
+			
+			<div class="m10">
+				
+				<input class="f22" type="text" name="fm_keywords" id="fm_keywords" placeholder="Keywords">
+				
+			</div>
+			
+		</div> <!-- /.w_unit -->
+		
+	</div> <!-- /.w_line -->
+	
+	<input class="f22" type="submit" value="Search">
 	
 </form>

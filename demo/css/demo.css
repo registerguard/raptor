@@ -1,5 +1,6 @@
-code,.code{font-family:consolas, monospace, serif;font-size:12px;padding:5px 10px;border:1px solid #ccc;vertical-align:middle;text-transform:none;}
-input.code{cursor:pointer;}
+.cdbx-code{font-family:consolas, monospace, serif;font-size:12px;padding:5px 10px;border:1px solid #ccc;vertical-align:middle;text-transform:none;}
+input.cdbx-code{cursor:pointer;}
+input.cdbx-code::-ms-clear{display:none;}
 .color{padding:20px 40px;}
 
 .wiffle{margin:0 10px;}
