@@ -4,11 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Raptor | Toolkit</title>
 	
-	
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	<link rel="stylesheet" href="css/raptor.css">
+	<!-- @endif -->
 	
-	
-	
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<link rel="stylesheet" href="css/raptor.min.css">
+	<!-- @endif -->
 	
 	<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.1.0/pure-min.css"> -->
 	

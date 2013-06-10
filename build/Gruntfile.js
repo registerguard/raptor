@@ -1,4 +1,4 @@
-/*global module:false, console:false, process:false*/
+/*global module:false*/
 
 module.exports = function(grunt) {
 	
@@ -17,7 +17,9 @@ module.exports = function(grunt) {
 		
 		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
 		
-		/*----------------------------------( WATCH )----------------------------------*/
+	/* ############################################################
+	   Watch
+	   ############################################################ */
 		
 		/**
 		 * Run predefined tasks whenever watched file patterns are added, changed
@@ -34,9 +36,7 @@ module.exports = function(grunt) {
 				
 				files : [
 					
-					'./files/css/less/**/*',
-					'./files/tmpl/**/*',
-					'./files/js/**/*'
+					'./src/**/*'
 					
 				],
 				
@@ -46,7 +46,9 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( PREFLIGHT )----------------------------------*/
+	/* ############################################################
+	   JS Hint
+	   ############################################################ */
 		
 		/**
 		 * Validate files with JSHint.
@@ -65,14 +67,15 @@ module.exports = function(grunt) {
 			
 			init : [
 				
-				'./Gruntfile.js',
-				'./files/js/woof.*.js'
+				'./Gruntfile.js'
 				
 			]
 			
 		},
 		
-		/*----------------------------------( ENVIRONMENT )----------------------------------*/
+	/* ############################################################
+	   Environment
+	   ############################################################ */
 		
 		/**
 		 * Grunt task to automate environment configuration for future tasks.
@@ -81,14 +84,6 @@ module.exports = function(grunt) {
 		 */
 		
 		env : {
-			
-			/*
-			options : {
-				
-				globalOption : 'foo'
-				
-			},
-			*/
 			
 			dev : {
 				
@@ -104,7 +99,9 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( CLEAN )----------------------------------*/
+	/* ############################################################
+	   Clean
+	   ############################################################ */
 		
 		/**
 		 * Clean files and folders.
@@ -124,8 +121,6 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'./files/index.html',
-					'./files/css/<%= pkg.name %>.css',
 					'../demo/**/*'
 					
 				]
@@ -145,7 +140,9 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( UGLIFY )----------------------------------*/
+	/* ############################################################
+	   Uglify
+	   ############################################################ */
 		
 		/**
 		 * Minify files with UglifyJS.
@@ -160,9 +157,11 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/js/respond.min.js' : [
-						'./files/js/respond.src.js',
-						'./files/js/respond.proxy.js'
+					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/js/<%= pkg.name %>.min.js' : [
+						
+						'./src/**/*.js',
+						'!./src/includes/**/*.js'
+						
 					]
 					
 				}
@@ -171,12 +170,14 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( LESS )----------------------------------*/
+	/* ############################################################
+	   LESS
+	   ############################################################ */
 		
 		/**
 		 * Compile LESS files to CSS.
 		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-less
+		 * @see 9+
 		 */
 		
 		less : {
@@ -191,13 +192,14 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'./files/css/<%= pkg.name %>.css' : './files/css/less/<%= pkg.name %>.less',
-					'./files/css/demo.css' : [
-						
-						'./files/css/less/demo.less',
-						'./lib/css/**/*'
-						
-					]
+					'../demo/css/boxes.css'   : './src/less/boxes.less',
+					'../demo/css/colors.css'  : './src/less/colors.less',
+					'../demo/css/fonts.css'   : './src/less/fonts.less',
+					'../demo/css/form.css'    : './src/less/form.less',
+					'../demo/css/grid.css'    : './src/less/grid.less',
+					'../demo/css/headers.css' : './src/less/headers.less',
+					
+					'../demo/css/<%= pkg.name %>.css' : './src/less/_<%= pkg.name %>.less'
 					
 				}
 				
@@ -213,8 +215,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/css/<%= pkg.name %>.min.css' : './files/css/less/<%= pkg.name %>.less',
-					'./files/css/demo.css' : './files/css/less/demo.less'
+					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/css/<%= pkg.name %>.min.css' : './src/less/_<%= pkg.name %>.less'
 					
 				}
 				
@@ -222,63 +223,11 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( COPY )----------------------------------*/
 		
-		/**
-		 * Copy files and folders.
-		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-copy
-		 * @see http://gruntjs.com/configuring-tasks#globbing-patterns
-		 */
 		
-		copy : {
-			
-			dev : {
-				
-				files : [
-					
-					{
-						
-						expand : true,
-						cwd : './files/',
-						src : ['img/**', 'css/*.css', 'js/*.js'],
-						dest : '../demo/'
-						
-					}
-					
-				]
-				
-			},
-			
-			pro : {
-				
-				files : [
-					
-					{
-						
-						expand : true,
-						cwd : './files/',
-						src : ['img/**', 'css/demo.css'],
-						dest : '../demo/'
-						
-					},
-					
-					{
-						
-						expand : true,
-						cwd : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/',
-						src : ['css/<%= pkg.name %>.min.css'],
-						dest : '../demo/'
-						
-					}
-					
-				]
-				
-			}
-			
-		},
-		
-		/*----------------------------------( INCLUDES )----------------------------------*/
+	/* ############################################################
+	   Includes
+	   ############################################################ */
 		
 		/**
 		 * Include other files, like php `include`.
@@ -290,16 +239,18 @@ module.exports = function(grunt) {
 			
 			files: {
 				
-				src: './files/tmpl/index.html', // Source files
-				dest: '../demo', // Destination directory
+				src: '*.html',
+				dest: '../demo',
 				flatten: true,
-				cwd: '.'
+				cwd: './src/tmpl/'
 				
 			}
 			
 		},
 		
-		/*----------------------------------( PREPROCESS )----------------------------------*/
+	/* ############################################################
+	   Pre-process
+	   ############################################################ */
 		
 		/**
 		 * Grunt task around preprocess npm module.
@@ -321,36 +272,127 @@ module.exports = function(grunt) {
 			
 			dev : {
 				
-				src : '../demo/index.html',
-				dest : '../demo/index.html'
+				files : {
+					
+					'../demo/index.html' : '../demo/index.html'
+					
+				}
 				
 			},
 			
 			pro : {
 				
-				src : '../demo/index.html',
-				dest : '../demo/index.html'
+				files : {
+					
+					'./src/buttons/index.html' : './src/buttons/buttons.html', // destination : source
+					'../demo/index.html'       : '../demo/index.html'
+					
+				}
+				
+			}
+			
+		},
+		
+	/* ############################################################
+	   Copy
+	   ############################################################ */
+		
+		/**
+		 * Copy files and folders.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-copy
+		 * @see http://gruntjs.com/configuring-tasks#globbing-patterns
+		 */
+		
+		copy : {
+			
+			dev : {
+				
+				files : [
+					
+					{
+						
+						expand : true,
+						cwd : './src/',
+						src : [
+							
+							'js/**/*',
+							'includes/**/*',
+							'img/**/*',
+							'fonts/**/*'
+							
+						],
+						dest : '../demo/'
+						
+					}
+					
+				]
+				
+			},
+			
+			pro : {
+				
+				files : [
+					
+					/*
+					{
+						
+						expand : true,
+						cwd : './src/_<% pkg.name %>/',
+						src : 'index.html'
+						dest : '../demo/'
+						
+					},
+					*/
+					
+					{
+						
+						expand : true,
+						cwd : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/',
+						src : [
+							
+							'css/<%= pkg.name %>.min.css',
+							'js/<%= pkg.name %>.min.js'
+							
+						],
+						dest : '../demo/'
+						
+					}
+					
+				]
 				
 			}
 			
 		}
 		
 	});
+
+
+/* ############################################################
+Tasks
+   ############################################################ */
 	
-	/*----------------------------------( TASKS )----------------------------------*/
+	// DEVELOPMENT
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	
-	grunt.loadNpmTasks('grunt-contrib-clean');
 	
+	// JS
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
+	
+	// MOVE + CLEAN
+	grunt.loadNpmTasks('grunt-contrib-clean');
+	
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	
+	
+	// CSS
 	grunt.loadNpmTasks('grunt-contrib-less');
 	
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	
+	// PREPROCESS + INCLUDES
 	grunt.loadNpmTasks('grunt-preprocess');
 	
 	grunt.loadNpmTasks('grunt-includes');
@@ -359,18 +401,9 @@ module.exports = function(grunt) {
 	
 	//----------------------------------
 	
-	/**
-	 * @see https://github.com/onehealth/grunt-preprocess/issues/7
-	 * @see https://github.com/onehealth/grunt-env/issues/4
-	 */
-	
-	grunt.registerTask('printenv', function () { console.log(process.env); });
-	
-	//grunt.registerTask('default', ['clean', 'jshint', 'uglify', 'copy']);
-	
 	grunt.registerTask('default', ['jshint']);
 	
-	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'includes', 'preprocess:dev', 'copy:dev']);
+	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'includes', 'copy:dev', 'preprocess:dev']);
 	
 	grunt.registerTask('pro', ['jshint', 'env:pro', 'clean:pro', 'less:pro', 'includes', 'preprocess:pro', 'copy:pro']);
 	
