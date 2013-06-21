@@ -1,47 +1,106 @@
 @import "var.less";
 
-/* ############################################################
-   Headers > Benton Sans Uppercase
-   ############################################################ */
 	/*
-	 Playing with L2, L1, D1, D2 for lighter, light, darker, and dark.
+	 Playing with L2, L1, D2, D1 for lighter, light, darker, and dark.
 	 See if this is easy to use/remember and either scrap, change, or
 	 implement
+	 
+	 **** Try the main modifier1 _ modifier2 approach ****
 	*/
 	
-	.blueL2{ color: @blueLight; }   .bg_blueL2{ background-color: @blueLight; }
-	.blueL1{ color: @blueLighter; } .bg_blueL1{ background-color: @blueLighter; }
-	.blue  { color: @blue; }        .bg_blue  { background-color: @blue; }
-	.blueD1{ color: @blueDark; }    .bg_blueD1{ background-color: @blueDark; }
-	.blueD2 {color: @blueDarker; }  .bg_blueD2 {background-color: @blueDarker; }
+/* ############################################################
+   Colors | Main
+   ############################################################ */
+	.tanL2{ color: @tanLighter; }       .bg_tanL2{ background-color: @tanLighter; }
+	.tanL1{ color: @tanLight; }         .bg_tanL1{ background-color: @tanLight; }
+	.tan  { color: @tan; }              .bg_tan  { background-color: @tan; }
+	.tanD1{ color: @tanDark; }          .bg_tanD1{ background-color: @tanDark; }
+	.tanD2 {color: @tanDarker; }        .bg_tanD2 {background-color: @tanDarker; }
 	
-	.greenL2{ color: @greenLight; }   .bg_greenL2{ background-color: @greenLight; }
-	.greenL1{ color: @greenLighter; } .bg_greenL1{ background-color: @greenLighter; }
-	.green  { color: @green; }        .bg_green  { background-color: @green; }
-	.greenD1{ color: @greenDark; }    .bg_greenD1{ background-color: @greenDark; }
-	.greenD2 {color: @greenDarker; }  .bg_greenD2 {background-color: @greenDarker; }
+	.redL2{ color: @redLighter; }       .bg_redL2{ background-color: @redLighter; }
+	.redL1{ color: @redLight; }         .bg_redL1{ background-color: @redLight; }
+	.red  { color: @red; }              .bg_red  { background-color: @red; }
+	.redD1{ color: @redDark; }          .bg_redD1{ background-color: @redDark; }
+	.redD2 {color: @redDarker; }        .bg_redD2 {background-color: @redDarker; }
 	
-	.redL2{ color: @redLight; }   .bg_redL2{ background-color: @redLight; }
-	.redL1{ color: @redLighter; } .bg_redL1{ background-color: @redLighter; }
-	.red  { color: @red; }        .bg_red  { background-color: @red; }
-	.redD1{ color: @redDark; }    .bg_redD1{ background-color: @redDark; }
-	.redD2 {color: @redDarker; }  .bg_redD2 {background-color: @redDarker; }
+	.blueL2{ color: @blueLighter; }     .bg_blueL2{ background-color: @blueLighter; }
+	.blueL1{ color: @blueLight; }       .bg_blueL1{ background-color: @blueLight; }
+	.blue  { color: @blue; }            .bg_blue  { background-color: @blue; }
+	.blueD1{ color: @blueDark; }        .bg_blueD1{ background-color: @blueDark; }
+	.blueD2 {color: @blueDarker; }      .bg_blueD2 {background-color: @blueDarker; }
 	
-	.yellowL2{ color: @yellowLight; }   .bg_yellowL2{ background-color: @yellowLight; }
-	.yellowL1{ color: @yellowLighter; } .bg_yellowL1{ background-color: @yellowLighter; }
+	.greenL2{ color: @greenLighter; }   .bg_greenL2{ background-color: @greenLighter; }
+	.greenL1{ color: @greenLight; }     .bg_greenL1{ background-color: @greenLight; }
+	.green  { color: @green; }          .bg_green  { background-color: @green; }
+	.greenD1{ color: @greenDark; }      .bg_greenD1{ background-color: @greenDark; }
+	.greenD2 {color: @greenDarker; }    .bg_greenD2 {background-color: @greenDarker; }
+	
+	.yellowL2{ color: @yellowLighter; } .bg_yellowL2{ background-color: @yellowLighter; }
+	.yellowL1{ color: @yellowLight; }   .bg_yellowL1{ background-color: @yellowLight; }
 	.yellow  { color: @yellow; }        .bg_yellow  { background-color: @yellow; }
 	.yellowD1{ color: @yellowDark; }    .bg_yellowD1{ background-color: @yellowDark; }
 	.yellowD2 {color: @yellowDarker; }  .bg_yellowD2 {background-color: @yellowDarker; }
+
+
+/* ############################################################
+   Colors | Complemetary
+   ############################################################ */
+	.tanCL2{ color: @tanCLighter; }       .bg_tanCL2{ background-color: @tanCLighter; }
+	.tanCL1{ color: @tanCLight; }         .bg_tanCL1{ background-color: @tanCLight; }
+	.tanC  { color: @tanC; }              .bg_tanC  { background-color: @tanC; }
+	.tanCD1{ color: @tanCDark; }          .bg_tanCD1{ background-color: @tanCDark; }
+	.tanCD2 {color: @tanCDarker; }        .bg_tanCD2 {background-color: @tanCDarker; }
 	
+	.redCL2{ color: @redCLighter; }       .bg_redCL2{ background-color: @redCLighter; }
+	.redCL1{ color: @redCLight; }         .bg_redCL1{ background-color: @redCLight; }
+	.redC  { color: @redC; }              .bg_redC  { background-color: @redC; }
+	.redCD1{ color: @redCDark; }          .bg_redCD1{ background-color: @redCDark; }
+	.redCD2 {color: @redCDarker; }        .bg_redCD2 {background-color: @redCDarker; }
 	
-	.blueC { color: @blueC; }
+	.blueCL2{ color: @blueCLighter; }     .bg_blueCL2{ background-color: @blueCLighter; }
+	.blueCL1{ color: @blueCLight; }       .bg_blueCL1{ background-color: @blueCLight; }
+	.blueC  { color: @blueC; }            .bg_blueC  { background-color: @blueC; }
+	.blueCD1{ color: @blueCDark; }        .bg_blueCD1{ background-color: @blueCDark; }
+	.blueCD2 {color: @blueCDarker; }      .bg_blueCD2 {background-color: @blueCDarker; }
 	
-	.green { color: @green; }
-	.greenC{ color: @greenC; }
+	.greenCL2{ color: @greenCLighter; }   .bg_greenCL2{ background-color: @greenCLighter; }
+	.greenCL1{ color: @greenCLight; }     .bg_greenCL1{ background-color: @greenCLight; }
+	.greenC  { color: @greenC; }          .bg_greenC  { background-color: @greenC; }
+	.greenCD1{ color: @greenCDark; }      .bg_greenCD1{ background-color: @greenCDark; }
+	.greenCD2 {color: @greenCDarker; }    .bg_greenCD2 {background-color: @greenCDarker; }
 	
+	.yellowCL2{ color: @yellowCLighter; } .bg_yellowCL2{ background-color: @yellowCLighter; }
+	.yellowCL1{ color: @yellowCLight; }   .bg_yellowCL1{ background-color: @yellowCLight; }
+	.yellowC  { color: @yellowC; }        .bg_yellowC  { background-color: @yellowC; }
+	.yellowCD1{ color: @yellowCDark; }    .bg_yellowCD1{ background-color: @yellowCDark; }
+	.yellowCD2 {color: @yellowCDarker; }  .bg_yellowCD2 {background-color: @yellowCDarker; }
+
+
+/* ############################################################
+   Colors | Grays
+   ############################################################ */
+	.white{ color: @white; }
+	.grayE{ color: @grayE; }
+	.grayD{ color: @grayD; }
+	.grayC{ color: @grayC; }
+	.grayB{ color: @grayB; }
+	.grayA{ color: @grayA; }
+	.gray9{ color: @gray9; }
+	.gray8{ color: @gray8; }
+	.gray7{ color: @gray7; }
+	.gray6{ color: @gray6; }
+	.gray5{ color: @gray5; }
+	.gray4{ color: @gray4; }
+	.gray3{ color: @gray3; }
+	.gray2{ color: @gray2; }
+	.gray1{ color: @gray1; }
+	.black{ color: @black; }
+
+
 	/* ==============================
-	   Grays
+	   Colors > Demo
 	   ============================== */
-		.white{ color: @white;}
-		.gray6{ color: @gray6; }
-		.grayC{ color: #ccc; }
+		.color{
+			width: 100%;
+			height: 30px;
+		}

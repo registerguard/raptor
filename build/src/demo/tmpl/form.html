@@ -25,158 +25,7 @@
 			
 			<div class="w_col w_B300 w_C640 w_D980">
 				
-<section>
-	
-	<h1>Native Functionality:</h1>
-	
-	<!-- ############################################################
-	     Inputs
-	     * These use a custom `input` class for a CSS hook
-	     ############################################################ -->
-	
-	<!-- Text -->
-	<label for="text">Text: </label>
-	<input id="text" class="input" name="text" type="text" placeholder="text">
-	
-	<!-- Textarea -->
-	<label for="textarea">Textarea: </label>
-	<textarea id="textarea" class="input" name="textarea" rows="3" ></textarea>
-	
-	<!-- Email -->
-	<input id="email" class="input" name="email" type="email" placeholder="email address" required>
-	
-	<!-- Password -->
-	<input id="password" class="input" name="password" type="password" placeholder="password" required>
-	
-	<!-- Number -->
-	<label for="number">Number: </label>
-	<input id="number" class="input" name="number" type="number" placeholder="number">
-	<!-- Additional aatributes -->
-	<input id="number" class="input" name="number" type="number" placeholder="number" min="5" max="25" step="5">
-	
-	<!-- Search -->
-	<label for="search">Search: </label>
-	<input id="search" class="input" name="search" type="search" placeholder="search">
-	
-	<!-- Telephone -->
-	<label for="tel">Tel: </label>
-	<input id="tel" class="input" name="tel" type="tel" placeholder="tel">
-	
-	<!-- URL -->
-	<label for="url">URL: </label>
-	<input id="url" class="input" name="url" type="url" placeholder="url">
-	
-	<!-- Week -->
-	<label for="week">Week </label>
-	<input id="week" class="input" name="week" type="week" placeholder="week">
-	
-	<!-- ZIP Code -->
-	<label for="zip">Zip Code: </label>
-	<input id="zip" class="input" name="zip" type="number" pattern="[0-9]*" placeholder="zip">
-	
-	<!-- ############################################################
-	     Buttons
-	     ############################################################ -->
-	
-	<!-- Submit -->
-	<label for="submit">Submit: </label>
-	<input id="submit" class="button" name="submit" type="submit">
-	
-	<!-- Button -->
-	<label for="button">Button: </label>
-	<input id="button" class="button" name="button" type="button" value="BUTTON">
-	
-	<!-- File -->
-	<label for="file">File: </label>
-	<input id="file" name="file" type="file">
-	
-	<!-- Image -->
-	<!-- <label for="image">Image(submit button, but an image): </label> -->
-	<!-- <input id="image" class="button" name="image" type="image" src="button-image.png" alt="Submit"> -->
-	
-	<!-- Reset -->
-	<label for="reset">Reset: </label>
-	<input id="reset" class="button" name="reset" type="reset">
-	
-	<!-- ############################################################
-	     Select + Dropdown-esque
-	     * These use a custom `dropdown` class for a CSS hook
-	     * all `id`s are non-semantically defaulted to the input type
-	     ############################################################ -->
-	
-	<!-- Month -->
-	<label for="month">Month: </label>
-	<input id="month" class="dropdown" name="month" type="month" placeholder="month">
-	
-	<!-- Date -->
-	<label for="date">Date: </label>
-	<input id="date" class="dropdown" name="date" type="date" placeholder="date">
-	<!-- Additional aatributes -->
-	<input id="date" class="dropdown" name="date" type="date" placeholder="date" min="2013-01-01" max="2014-12-31">
-	
-	<!-- Time -->
-	<label for="time">Time: </label>
-	<input id="time" class="dropdown" name="time" type="time" placeholder="time">
-	
-	<!-- Datetime -->
-	<label for="datetime">Datetime: </label>
-	<input id="datetime" class="dropdown" name="datetime" type="datetime" placeholder="date and time">
-	
-	<!-- Local Datetime -->
-	<label for="datetime-local">Datetime-Local: </label>
-	<input id="datetime-local" class="dropdown" name="datetime-local" type="datetime-local" placeholder="datetime-local">
-	
-	<!-- Select -->
-	<label for="select">Select: </label>
-	<select class="dropdown" >
-		
-		<option value="option0">---</option>
-		
-		<option value="option1">option 1</option>
-		
-		<option value="option2">option 2</option>
-		
-		<optgroup label="subgroup">
-			
-			<option value="sub1">car 1</option>
-			
-			<option value="sub2">car 2</option>
-			
-		</optgroup>
-		
-	</select>
-	
-	<!-- ############################################################
-	     Other
-	     ############################################################ -->
-	
-	<!-- Checkbox -->
-	<input id="checkbox" name="checkbox" type="checkbox">
-	<label for="checkbox">Checkbox</label>
-	
-	<!-- Radio Button Group -->
-	<input id="radio1" type="radio" name="radio" value="radio1">
-	<label for="radio1">Radio 1</label>
-	
-	<input id="radio2" type="radio" name="radio" value="radio2">
-	<label for="radio2">Radio 2</label>
-
-	<input id="radio3" type="radio" name="radio" value="radio3">
-	<label for="radio3">Radio 3</label>
-	
-	<!-- Range -->
-	<label for="range">Range: </label>
-	<input id="range" name="range" type="range">
-	<!-- Additional aatributes -->
-	<input id="range" name="range" type="range" min="1" max="100">
-	
-	<!-- Color -->
-	<label for="color">Color: </label>
-	<input id="color" class="input" name="color" type="color" placeholder="color">
-	
-</section>
-				
-				<hr>
+				<!-- include "form/default.html" -->
 				
 				<section>
 					
@@ -213,21 +62,7 @@
 					
 				</section>
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+				<hr>
 				
 				<section>
 					
@@ -237,16 +72,6 @@
 						
 						<p><span class="f22_icon">r</span> : required field</p>
 						
-						<hr>
-						
-						<div class="p40" id="errorbox">
-							
-							<h1>Your entry contains errors:</h1>
-							
-							<ul id="error-list"></ul>
-							
-						</div>
-						
 						<section>
 							
 							<h1>Contact Information</h1>
@@ -255,7 +80,7 @@
 								
 								<div class="f22_f-igroup f22_g-1">
 									
-									<input class="f22_f-input f22_g-1" type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address" required>
+									<input class="f22_f-input f22_g-1" type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="email address" required autofocus>
 									
 									<span class="f22_icon">r</span>
 									
@@ -294,6 +119,24 @@
 										</div>
 										
 									</div> <!-- /.m20_ns -->
+									
+								</div> <!-- /.w_unit -->
+								
+							</div> <!-- /.w_line -->
+							
+							<br><br>
+							
+							<div class="w_line">
+								
+								<div class="w_unit">
+									
+									<input class="f22_f-input f22_g-1" type="text" value="" name="ADDRESS" id="mce-ADDRESS" placeholder="Address">
+									
+									<input class="f22_f-input" type="text" value="" name="CITY" id="mce-CITY">
+									
+									<input class="f22_f-input" type="text" value="" name="STATE" id="mce-STATE" size="2" maxlength="2">
+									
+									<input class="f22_f-input" type="number" value="" name="ZIPCODE" id="mce-ZIPCODE" size="5" maxlength="5" pattern="[0-9]*" title="ZIP CODE | Use only numeric characters (0-9)" placeholder="zip">
 									
 								</div> <!-- /.w_unit -->
 								
@@ -430,7 +273,13 @@
 			
 			<div class="w_col w_B300">
 				
-				<p>Sidebar stuff here</p>
+				<div class="p40_ew p20_ns" id="errorbox">
+					
+					<h1>Your entry contains errors:</h1>
+					
+					<ul id="error-list"></ul>
+					
+				</div>
 				
 			</div> <!-- /.w_col -->
 			

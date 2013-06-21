@@ -1,4 +1,4 @@
-@font-face{font-family:'raptor-icons';src:url('../fonts/raptor-icons.eot');src:url('../fonts/raptor-icons.eot?#iefix') format('embedded-opentype'),url('../fonts/raptor-icons.woff') format('woff'),url('../fonts/raptor-icons.ttf') format('truetype'),url('../fonts/raptor-icons.svg#raptor-icons') format('svg');font-weight:normal;font-style:normal;}.f22_icon{font-family:'raptor-icons';}
+@font-face{font-family:'raptor-icons';src:url('../fonts/raptor-icons.eot');src:url('../fonts/raptor-icons.eot?#iefix') format('embedded-opentype'),url('../fonts/raptor-icons.woff') format('woff'),url('../fonts/raptor-icons.ttf') format('truetype'),url('../fonts/raptor-icons.svg#raptor-icons') format('svg');font-weight:normal;font-style:normal;}.f22_icon,input[type="submit"].f22_icon{font-family:'raptor-icons';}
 button.f22,input.f22,select.f22,textarea.f22{font-size:100%;margin:0;vertical-align:baseline;}
 label:hover{cursor:pointer;}
 .f22_form{padding:1em;background-color:#0083CA;}
@@ -25,9 +25,9 @@ input[disabled]::-webkit-input-placeholder{color:#ccc;}
 input[disabled]::-moz-placeholder{color:#ccc;}
 input[disabled]:-ms-input-placeholder{color:#ccc;}
 .f22_form input[disabled],.f22_form select[disabled],.f22_form textarea[disabled],.f22_form input[readonly],.f22_form select[readonly],.f22_form textarea[readonly]{cursor:not-allowed;background-color:#eee;border-color:#ccc;}
-#errorbox{display:none;background-color:#eee;sborder:1px solid #E1343A;border-radius:3px;}
+#errorbox{display:none;background-color:#eee;border-radius:3px;}
 #errorbox ul{list-style:none;margin:0;padding:0;}
-#errorbox li{margin:0;padding:1.5em 0;font-family:'Open Sans',Arial,sans-serif;font-weight:600;border-bottom:1px solid #fff;}
+#errorbox li{margin:0;padding:1.5em 0;font-family:'Open Sans',Arial,sans-serif;font-weight:600;border-bottom:1px solid #ccc;}
 input[type=text].f22_f-error,input[type=email].f22_f-error,input[type=pasword].f22_f-error,input[type=number].f22_f-error,input[type=search].f22_f-error,input[type=tel].f22_f-error,input[type=url].f22_f-error,input[type=week].f22_f-error,input[type=month].f22_f-error,input[type=date].f22_f-error,input[type=datetime].f22_f-error,input[type=datetime-local].f22_f-error{border-color:#E1343A;}
 input[type=text].f22_f-error:focus,input[type=email].f22_f-error:focus,input[type=pasword].f22_f-error:focus,input[type=number].f22_f-error:focus,input[type=search].f22_f-error:focus,input[type=tel].f22_f-error:focus,input[type=url].f22_f-error:focus,input[type=week].f22_f-error:focus,input[type=month].f22_f-error:focus,input[type=date].f22_f-error:focus,input[type=datetime].f22_f-error:focus,input[type=datetime-local].f22_f-error:focus{border-color:#E1343A;}
 .f22_f-search input.f22_f-error+.f22_icon,.f22_f-igroup input.f22_f-error+.f22_icon,.f22_f-error .f22_icon{color:#E1343A;}

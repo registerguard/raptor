@@ -1,0 +1,205 @@
+<!-- https://developer.apple.com/library/safari/#documentation/AppleApplications/Reference/SafariHTMLRef/Articles/InputTypes.html -->
+
+<form method="post" action="form_process.php" enctype="multipart/form-data">
+	
+	<div class="text">
+	
+		<label for="text">Text: </label>
+		<input id="text" class="input" name="text" type="text" placeholder="text">
+		
+		<div class="input_clear"><i class="icon-remove-sign"></i></div>
+	
+	</div>
+	
+	<br><br>
+			
+	<div class="select">
+	
+		<label for="select">Select: </label>
+		
+		<select class="dropdown">
+			<option value="option0">---</option>
+			<option value="option1">option 1</option>
+			<option value="option2">option 2</option>
+			<optgroup label="cars">
+				<option value="car1">car 1</option>
+				<option value="car2">car 2</option>
+			</optgroup>
+		</select>
+		
+		<i class="icon-chevron-down"></i>
+		
+		<div class="input_clear"><i class="icon-remove-sign"></i></div>
+	
+	</div>
+
+	<br><br>
+	
+	<label for="button">Button: </label>
+	<input id="button" class="button" name="button" type="button" value="BUTTON">
+	
+	<br><br>
+	
+	<input id="checkbox" name="checkbox" type="checkbox">
+	<label for="checkbox">Checkbox</label>
+	
+	<br><br>
+	
+	<div class="month">
+	
+		<label class="placeholderless" for="month">Month </label>
+		<input id="month" class="dropdown" name="month" type="month">
+		
+		<i class="icon-chevron-down"></i>
+		
+	</div>
+	
+	<br><br>
+	
+	<div class="date">
+	
+		<label class="placeholderless" for="date">Date </label>
+		<input id="date" class="dropdown" name="date" type="date">
+		
+		<i class="icon-chevron-down"></i>
+		
+	</div>
+	
+	<br><br>
+	
+	<div class="time">
+		
+		<label class="placeholderless" for="time">Time </label>
+		<input id="time" class="dropdown" name="time" type="time" placeholder="time">
+		
+		<i class="icon-chevron-down"></i>
+		
+	</div>
+	
+	<br><br>
+	
+	<div class="datetime">
+	
+		<label class="placeholderless" for="datetime">Datetime </label>
+		<input id="datetime" class="dropdown" name="datetime" type="datetime" placeholder="datetime">
+		
+		<i class="icon-chevron-down"></i>
+	
+	</div>
+	
+	<br><br>
+	
+	<div class="datetime-local">
+	
+		<label class="placeholderless" for="datetime-local">Datetime-Local </label>
+		<input id="datetime-local" class="dropdown" name="datetime-local" type="datetime-local" placeholder="datetime-local">
+		
+		<i class="icon-chevron-down"></i>
+		
+	</div>
+	
+	<br><br>
+	
+	<div class="email">
+	
+		<label for="email">Email: </label>
+		<input id="email" class="input" name="email" type="email" placeholder="email">
+		
+		<div class="input_clear"><i class="icon-remove-sign"></i></div>
+	
+	</div>
+
+	
+	<br><br>
+	
+	<label for="file">File: </label>
+	<input id="file" name="file" type="file">
+	
+	<br><br>
+	
+	<label for="image">Image(submit button, but an image): </label>
+	<input id="image" class="button" name="image" type="image" src="http://psullivan6.com/images/logo/logo-30.png" alt="Submit"></label>
+	
+	<br><br>
+	
+	<div class="number">
+	
+		<label for="number">Number: </label>
+		<input id="number" class="input" name="number" type="number" placeholder="number">
+		
+		<div class="input_clear"><i class="icon-remove-sign"></i></div>
+	
+	</div>
+	
+	<br><br>
+	
+	<div class="password">
+	
+		<label for="password">Password: </label>
+		<input id="password" class="input" name="password" type="password" placeholder="password">
+		
+		<div class="input_clear"><i class="icon-remove-sign"></i></div>
+	
+	</div>
+	
+	<br><br>
+	
+	<input id="radio1" type="radio" name="radio" value="radio1">
+	<label for="radio1">Radio 1</label>
+	
+	<input id="radio2" type="radio" name="radio" value="radio2">
+	<label for="radio2">Radio 2</label>
+
+	<input id="radio3" type="radio" name="radio" value="radio3">
+	<label for="radio3">Radio 3</label>
+
+	<br><br>
+	
+	<label for="range">Range: </label>
+	<input id="range" name="range" type="range">
+	
+	<br><br>
+	
+	<label for="reset">Reset: </label>
+	<input id="reset" class="button" name="reset" type="reset">
+	
+	<br><br>
+	
+	<label for="search">Search: </label>
+	<input id="search" class="search" name="search" type="search" placeholder="search">
+	
+	<br><br>
+	
+	<label for="submit">Submit: </label>
+	<input id="submit" class="button" name="submit" type="submit">
+	
+	<br><br>
+	
+	<label for="tel">Tel: </label>
+	<input id="tel" class="input" name="tel" type="tel" placeholder="tel">
+	
+	<br><br>
+	
+	<label for="url">URL: </label>
+	<input id="url" class="input" name="url" type="url" placeholder="url">
+	
+	<br><br>
+	
+	<label class="placeholderless" for="week">Week </label>
+	<input id="week" class="input" name="week" type="week" placeholder="week">
+	
+	<br><br>
+	
+	<label for="zip">Zip Code: </label>
+	<input id="zip" class="input" name="zip" type="number" pattern="[0-9]*" title="ZIP CODE | Use only numeric characters (0-9)" placeholder="zip">
+	
+	<br><br>
+	
+	<p>Non iOS stuff</p>
+	
+	<br><br>
+	
+	<label for="color">Color: </label>
+	<input id="color" class="input" name="color" type="color" placeholder="color">
+	
+</form>

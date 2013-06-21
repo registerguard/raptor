@@ -242,7 +242,7 @@ module.exports = function(grunt) {
 				src: '*.html',
 				dest: '../demo',
 				flatten: true,
-				cwd: './src/tmpl/'
+				cwd: './src/demo/'
 				
 			}
 			
@@ -403,7 +403,7 @@ Tasks
 	
 	grunt.registerTask('default', ['jshint']);
 	
-	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'includes', 'copy:dev', 'preprocess:dev']);
+	grunt.registerTask('dev', ['jshint', 'clean:dev', 'less:dev', 'includes', 'copy:dev']);
 	
 	grunt.registerTask('pro', ['jshint', 'env:pro', 'clean:pro', 'less:pro', 'includes', 'preprocess:pro', 'copy:pro']);
 	
