@@ -1,0 +1,67 @@
+/* ############################################################
+   Animations
+   ############################################################ */
+	/* ==============================
+	   Animations > Fly In
+	   ============================== */
+	@-webkit-keyframes flyIn {
+		from {
+			width: 25px;
+			-webkit-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		} to {
+			width: 402px;
+			-webkit-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+		}
+	}
+	@-moz-keyframes flyIn {
+		from {
+			width: 25px;
+			-moz-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		} to {
+			width: 402px;
+			-moz-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+		}
+	}
+	@keyframes flyIn {
+		from {
+			width: 25px;
+			-o-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+			-ms-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+			transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		} to {
+			width: 402px;
+			-o-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+			-ms-transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+			transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(0deg) skewY(0deg);
+		}
+	}
+	.fly-in {
+		width: 25px;
+		-webkit-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		-moz-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		-o-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		-ms-transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		transform: scale(1) rotate(120deg) translateX(-50px) translateY(-50px) skewX(0deg) skewY(0deg);
+		
+		/* make the plane smaller on start */
+		-webkit-animation:flyIn ease-in-out 1; /* call our keyframe named flyIn, use animattion ease-in-out and repeat it only 1 time */
+		-moz-animation:flyIn ease-in-out 1;
+		animation:flyIn ease-in-out 1;
+		
+		-webkit-animation-fill-mode:forwards; /* this makes sure that after animation is done we remain at the last keyframe value */
+		-moz-animation-fill-mode:forwards;
+		animation-fill-mode:forwards;
+		
+		-webkit-animation-duration:1s;
+		-moz-animation-duration:1s;
+		animation-duration:1s;
+	}
+
+	/* ==============================
+	   Animations > Logo
+	   ============================== */
+		.logo {
+			-webkit-animation-delay: .1s;
+			-moz-animation-delay: .1s;
+			animation-delay: .1s;
+		}

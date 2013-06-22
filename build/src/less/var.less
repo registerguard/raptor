@@ -99,3 +99,17 @@
 		@gray2: #222;
 		@gray1: #111;
 		@black: #000;
+
+
+/* ############################################################
+   Transitions
+   ############################################################ */
+	.transition(@property: all; @duration: .3s; @timing: ease){
+		
+		-webkit-transition: @property @duration @timing;
+		-moz-transition: @property @duration @timing;
+		-ms-transition: @property @duration @timing;
+		-o-transition: @property @duration @timing;
+		transition: @property @duration @timing;
+		
+	}

@@ -199,6 +199,8 @@ module.exports = function(grunt) {
 					'../demo/css/grid.css'    : './src/less/grid.less',
 					'../demo/css/headers.css' : './src/less/headers.less',
 					
+					'../demo/css/demo.css' : './src/less/demo.less',
+					
 					'../demo/css/<%= pkg.name %>.css' : './src/less/_<%= pkg.name %>.less'
 					
 				}

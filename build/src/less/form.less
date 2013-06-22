@@ -1,503 +1,116 @@
-/* ############################################################
-   Notes:
-   
-   - http://css-tricks.com/styling-texty-inputs-only/
-   - http://www.cssnewbie.com/input-button-line-height-bug/#.Ua_Bl0BwpyI
-   - http://stackoverflow.com/questions/5517744/remove-extra-button-spacing-padding-in-firefox
-   - http://css-tricks.com/hang-on-placeholders/
-   ############################################################ */
+@import "var";
+
+/*
+ * Notes:
+ *
+ * 1) Firefox <input> line-height "bug": 
+ *    http://www.cssnewbie.com/input-button-line-height-bug/#.UcT7OJzNke8
+ * 2) 
+ */
 
 /* ############################################################
    Icons
    ############################################################ */
-	
-	@font-face {
-		font-family: 'raptor-icons';
-		src:url('../fonts/raptor-icons.eot');
-		src:url('../fonts/raptor-icons.eot?#iefix') format('embedded-opentype'),
-			url('../fonts/raptor-icons.woff') format('woff'),
-			url('../fonts/raptor-icons.ttf') format('truetype'),
-			url('../fonts/raptor-icons.svg#raptor-icons') format('svg');
-		font-weight: normal;
-		font-style: normal;
-	}
-	.f22_icon,
-	input[type="submit"].f22_icon {
-		font-family: 'raptor-icons';
-	}
+	.f22_icon{ font-family: 'raptor-icons'; }
 
 
 /* ############################################################
-   Forms
+   Label
    ############################################################ */
-	button.f22,
-	input.f22,
-	select.f22,
-	textarea.f22 {
-		font-size: 100%;
-		margin: 0;
-		vertical-align: baseline;
+	.f22 label{
+		display: none;
+		float: left;
+		border: 1px solid #fff;
+		padding: .75em 1em;
+		font: 0.875em/normal Arial, sans-serif; /* FF input line-height bug */
 	}
-	label:hover{
-		cursor: pointer;
-	}
-	
-	.f22_form{
-		
-		padding: 1em;
-		background-color: #0083CA;
-		
-		/* Global styles for the Raptor form */
-		
-	}
-	
 	/* ==============================
-	   Input > Text-like
+	   Form > Label > IE Conditionals
 	   ============================== */
-		input[type=text].f22_f-input,
-		input[type=email].f22_f-input,
-		input[type=pasword].f22_f-input,
-		input[type=number].f22_f-input,
-		input[type=search].f22_f-input,
-		input[type=tel].f22_f-input,
-		input[type=url].f22_f-input,
-		input[type=week].f22_f-input,
-		input[type=month].f22_f-input,
-		input[type=date].f22_f-input,
-		input[type=datetime].f22_f-input,
-		input[type=datetime-local].f22_f-input{
-			display: inline-block;
-			border: 1px solid #aaa;
-			padding: .75em 1em;
-			border-radius: 3px;
-			font-family: 'Open Sans', Arial, sans-serif;
-			font-size: .875em;
-			-webkit-transition: border .3s ease;
-			-moz-transition: border .3s ease;
-			-ms-transition: border .3s ease;
-			-o-transition: border .3s ease;
-			transition: border .3s ease;
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-			-webkit-font-smoothing: antialiased;
+		.ie9- .f22 label{
+			display: block;
 		}
-			input[type=text].f22_f-input:focus,
-			input[type=email].f22_f-input:focus,
-			input[type=pasword].f22_f-input:focus,
-			input[type=number].f22_f-input:focus,
-			input[type=search].f22_f-input:focus,
-			input[type=tel].f22_f-input:focus,
-			input[type=url].f22_f-input:focus,
-			input[type=week].f22_f-input:focus,
-			input[type=month].f22_f-input:focus,
-			input[type=date].f22_f-input:focus,
-			input[type=datetime].f22_f-input:focus,
-			input[type=datetime-local].f22_f-input:focus{
-				outline: 0;
-				border-color: #0083CA;
-			}
-		
-		/* ------------------------------
-		   Input > Text-like > Search
-		   ------------------------------ */
-		.f22_f-search{
-			display: inline-block;
-			position: relative;
-		}
-		.f22_f-igroup{
-			position: relative;
-		}
-			input[type=search].f22_f-input,
-			.f22_f-search input[type=search],
-			.f22_f-igroup input[required]{
-				padding-right: 2.5em;
-			}
-			input[type=search].f22_f-input,
-			.f22_f-search input[type=search]{
-				-webkit-appearance: textfield;
-				border-radius: 2em;
-				padding-left: 1.25em;
-			}
-			.f22_f-search input[type=submit]::-moz-focus-inner { padding: 0; border: 0; }
-				.f22_f-search .f22_icon,
-				.f22_f-igroup .f22_icon{
-					position: absolute;
-					right: 1.25em;
-					top: 50%;
-					color: #aaa;
-					margin-top: -.5em;
-					line-height: 1em;
-					font-size: .875em;
-					-webkit-transition: color .3s ease;
-					-moz-transition: color .3s ease;
-					-ms-transition: color .3s ease;
-					-o-transition: color .3s ease;
-					transition: color .3s ease;
-				}
-				.f22_f-search input[type=submit].f22_icon{
-					cursor: pointer;
-					padding: 0;
-					border: none;
-					background: none;
-					margin-top: -.5625em;
-				}
-				.f22_f-search input:focus + .f22_icon,
-				.f22_f-igroup input:focus + .f22_icon{
-					color: #0083CA;
-				}
-				
-				.f22_f-valid + .f22_icon{
-					margin-top: -1em;
-					padding: .5em;
-					font-size: .5625em;
-					background-color: #9AC80D;
-					border-radius: 2em;
-					color: #fff;
-				}
-					.f22_f-search input.f22_f-valid:focus + .f22_icon,
-					.f22_f-igroup input.f22_f-valid:focus + .f22_icon{
-						color: #fff;
-					}
-				
-		
-	/* ==============================
-	   Input > placeholder
-	   * can't chain these ... lame
-	   ============================== */
-		::-webkit-input-placeholder { color: #666; }
-		:-moz-placeholder           { color: #666; }
-		::-moz-placeholder          { color: #666; }
-		:-ms-input-placeholder      { color: #666; }
-			
-			input:focus::-webkit-input-placeholder { color: #aaa; transition: text-indent 1s .5s ease; text-indent: -100%; }
-			input:focus::-moz-placeholder          { color: #aaa; transition: text-indent 1s .5s ease; text-indent: -100%; }
-			input:focus:-ms-input-placeholder      { color: #aaa; transition: text-indent 1s .5s ease; text-indent: -100%; }
-			
-			input[disabled]::-webkit-input-placeholder { color: #ccc; }
-			input[disabled]::-moz-placeholder          { color: #ccc; }
-			input[disabled]:-ms-input-placeholder      { color: #ccc; }
 
-	.f22_form input[disabled],
-	.f22_form select[disabled],
-	.f22_form textarea[disabled],
-	.f22_form input[readonly],
-	.f22_form select[readonly],
-	.f22_form textarea[readonly] {
-		cursor: not-allowed;
-		background-color: #eee;
-		border-color: #ccc;
-	}
 
-	/* ==============================
-	   Input > Errors
-	   ============================== */
-		#errorbox{
-			display: none;
-			background-color: #eee;
-			border-radius: 3px;
-		}
-			#errorbox ul{
-				list-style: none;
-				margin: 0;
-				padding: 0;
-			}
-				#errorbox li{
-					margin: 0;
-					padding: 1.5em 0;
-					font-family: 'Open Sans', Arial, sans-serif;
-					font-weight: 600;
-					border-bottom: 1px solid #ccc;
-				}
-		
-		input[type=text].f22_f-error,
-		input[type=email].f22_f-error,
-		input[type=pasword].f22_f-error,
-		input[type=number].f22_f-error,
-		input[type=search].f22_f-error,
-		input[type=tel].f22_f-error,
-		input[type=url].f22_f-error,
-		input[type=week].f22_f-error,
-		input[type=month].f22_f-error,
-		input[type=date].f22_f-error,
-		input[type=datetime].f22_f-error,
-		input[type=datetime-local].f22_f-error{
-			border-color: #E1343A;
-		}
-		
-			input[type=text].f22_f-error:focus,
-			input[type=email].f22_f-error:focus,
-			input[type=pasword].f22_f-error:focus,
-			input[type=number].f22_f-error:focus,
-			input[type=search].f22_f-error:focus,
-			input[type=tel].f22_f-error:focus,
-			input[type=url].f22_f-error:focus,
-			input[type=week].f22_f-error:focus,
-			input[type=month].f22_f-error:focus,
-			input[type=date].f22_f-error:focus,
-			input[type=datetime].f22_f-error:focus,
-			input[type=datetime-local].f22_f-error:focus{
-				border-color: #E1343A;
-			}
-			.f22_f-search input.f22_f-error + .f22_icon,
-			.f22_f-igroup input.f22_f-error + .f22_icon,
-			.f22_f-error .f22_icon{
-				color: #E1343A;
-			}
-	/* ==============================
-	   Input > Buttons
-	   ============================== */
-		input[type=submit]{
-			cursor: pointer;
-			display: inline-block;
-			padding: .75em 1em;
-			background-color: #0083CA;
-			border: 1px solid #00517E;
-			border-radius: 3px;
-			font-family: 'Open Sans', Arial, sans-serif;
-			font-size: .875em;
-			color: #fff;
-			-webkit-transition: border .3s ease;
-			-moz-transition: border .3s ease;
-			-ms-transition: border .3s ease;
-			-o-transition: border .3s ease;
-			transition: border .3s ease;
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
-			-webkit-font-smoothing: antialiased;
-		}
-		
-/*
-	.f22_form input:focus:invalid,
-	.f22_form textarea:focus:invalid,
-	.f22_form select:focus:invalid {
-		color: #b94a48;
-		border: 1px solid #ee5f5b;
-	}
-	.f22_form input:focus:invalid:focus,
-	.f22_form textarea:focus:invalid:focus,
-	.f22_form select:focus:invalid:focus {
-		border-color: #e9322d;
-	}
-	.f22_form select {
-		border: 1px solid #ccc;
-		background-color: white;
-	}
-	.f22_form select[multiple] {
-		height: auto;
-	}
-	.f22_form label {
-		margin: 0.5em 0 0.2em;
-		color: #999;
-		font-size:90%;
-	}
-	.f22_form fieldset {
-		margin: 0;
-		padding: 0.35em 0 0.75em;
-		border: 0;
-	}
-	.f22_form legend {
-		display: block;
-		width: 100%;
-		padding: 0.3em 0;
-		margin-bottom: 0.3em;
-		font-size: 125%;
-		color: #333;
-		border-bottom: 1px solid #e5e5e5;
-	}
-
-	.f22_form.f22_form-stacked input[type='text'],
-	.f22_form.f22_form-stacked select,
-	.f22_form.f22_form-stacked label {
-		display: block;
-	}
-
-	.f22_form-aligned input,
-	.f22_form-aligned textarea,
-	.f22_form-aligned select,
-	.f22_form-aligned .pure-help-inline {
-		display: inline-block;
-		*zoom: 1;
-		vertical-align: middle;
-	}
-
-	.f22_form-aligned .pure-control-group {
-		margin-bottom: 0.5em;
-	}
-	.f22_form-aligned .pure-control-group label {
-		text-align: right;
-		display: inline-block;
-		vertical-align: middle;
-		width: 10em;
-		margin: 0 1em 0 0;
-	}
-	.f22_form-aligned .pure-controls {
-		margin: 1.5em 0 0 10em;
-	}
-
-	.f22_form .pure-input-rounded {
-		border-radius: 20px;
-		padding-left:1em;
-	}
-
-	.f22_form .pure-group fieldset {
-		margin-bottom: 10px;
-	}
-	.f22_form .pure-group input {
-		display: block;
-		padding: 10px;
-		margin: 0;
-		border-radius: 0;
+/* ############################################################
+   Text Inputs
+   ############################################################ */
+	.f22 input{
 		position: relative;
-		top: -1px;
-	}
-	.f22_form .pure-group input:focus {
-		z-index: 2;
-	}
-	.f22_form .pure-group input:first-child {
-		top: 1px;
-		border-radius: 4px 4px 0 0;
-	}
-	.f22_form .pure-group input:last-child {
-		top: -2px;
-		border-radius: 0 0 4px 4px;
-	}
-	.f22_form .pure-group button {
-		margin: 0.35em 0;
-	}
-
-	.f22_form .pure-input-1   { width: 100%; }
-	.f22_form .pure-input-2-3 { width: 66%; }
-	.f22_form .pure-input-1-2 { width: 50%; }
-	.f22_form .pure-input-1-3 { width: 33%; }
-	.f22_form .pure-input-1-4 { width: 25%; }
-
-	.f22_form .pure-help-inline {
-		display: inline-block;
-		padding-left: 0.3em;
-		color: #666;
-		vertical-align: middle;
-		font-size: 90%;
-	}
-*/
-
-/* [B]RAVO */
-@media only screen and (min-width: 665px) {
-	
-	input.f22,
-	select.f22{ width: auto; }
-	
-}
-
-@media only screen and (min-width: 1005px) { } /* [C]HARLIE */
-
-@media only screen and (min-width: 1345px) { } /* [D]ELTA */
-
-
-
-/* iCheck plugin Flat skin, blue
------------------------------------ */
-.icheckbox_flat-blue,
-.iradio_flat-blue {
-	position: absolute;
-	left: 0;
-	display: block;
-	margin: 0;
-	padding: 0;
-	width: 20px;
-	height: 20px;
-	border: none;
-	cursor: pointer;
-	border: 2px solid #aaa;
-	
-	
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-ms-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	transition: all .3s ease;
-}
-
-.f22_f-checkbox {
-	display: inline-block;
-}
-	.f22_f-checkbox label {
+		width: 100%;
+		height: auto;
 		display: block;
-		font-family: 'Open Sans', Arial, sans-serif;
-		margin-left: 30px;
-		line-height: 22px;
-		vertical-align: top;
+		margin: 0 0 1em 0;
+		border: 1px solid @grayA;
+		padding: .75em 1em;
 		
+		/* FF input line-height bug will override 1.714286 with "normal": */
+		font: 0.875em/1 Arial, sans-serif;
+		color: @gray3;
+		
+		.transition(all);
+		
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-font-smoothing: antialiased;
 	}
-
-/* ==============================
-   CHECKBOX
-   ============================== */
-.icheckbox_flat-blue {
-	border-radius: 6px;
-	background: url(../img/f22_check.png) no-repeat 22px 0;
-}
-	.icheckbox_flat-blue:hover,
-	.icheckbox_flat-blue.hover,
-	.icheckbox_flat-blue.focus {
-		border-color: #0083CA;
-		background-position: 0 0;
-	}
-	.icheckbox_flat-blue.checked {
-		background-position: -22px 0;
-		border-color: #0083CA;
-	}
-	.icheckbox_flat-blue.disabled {
-		background-position: 22px 0;
-		cursor: not-allowed;
-		border-color: #ccc;
-	}
-	.icheckbox_flat-blue.checked.disabled {
-		background-position: -44px 0;
-	}
-
-/* ==============================
-   RADIO
-   ============================== */
-.iradio_flat-blue {
-	border-radius: 20px;
-	background: url(../img/f22_radio.png) no-repeat 22px 0;
-}
-	.iradio_flat-blue:hover,
-	.iradio_flat-blue.hover {
-		border-color: #0083CA;
-		background-position: 0 0;
-	}
-	.iradio_flat-blue.checked {
-		background-position: -22px 0;
-		border-color: #0083CA;
-	}
-	.iradio_flat-blue.disabled {
-		background-position: 22px 0;
-		cursor: not-allowed;
-		border-color: #ccc;
-	}
-	.iradio_flat-blue.checked.disabled {
-		background-position: -44px 0;
-	}
+		.f22 input:hover,
+		.f22 input:focus{
+			outline: 0;
+			color: #000;
+		}
+		.f22 input:hover{ border-color: @gray6; }
+		.f22 input:focus{ border-color: @blueLight; }
 	
-	/*
-	.iradio_flat-blue:hover            { background-position: -66px 0; }
-	.iradio_flat-blue.checked          { background-position: -88px 0; }
-	.iradio_flat-blue.disabled         { background-position:  22px 0; cursor: not-allowed; border-color: #ccc;}
-	.iradio_flat-blue.checked.disabled { background-position: -111px 0; }
-	*/
+	/* ==============================
+	   Text Inputs > IE Conditionals
+	   ============================== */
+		.f22 .input_box{
+			position: relative;
+			display: block;
+			width: 100%;
+		}
+			.ie9- .f22 .input_box .input{ overflow: auto; }
+			.ie7- .input_box input{ width: 90%; }
+	
+	/* ==============================
+	   Text Inputs > Disabled
+	   ============================== */
+		.f22 input[disabled]{
+			cursor: not-allowed;
+			background-color: @grayE;
+			border-color: @grayC;
+		}
 
-/* Retina support */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-	   only screen and (-moz-min-device-pixel-ratio: 1.5),
-	   only screen and (-o-min-device-pixel-ratio: 3/2),
-	   only screen and (min-device-pixel-ratio: 1.5) {
-	.icheckbox_flat-blue,
-	.iradio_flat-blue {
-		background-image: url(../raptor_checkradio@2x.png);
-		-webkit-background-size: 130px 20px;
-		background-size: 130px 20px;
+/* ############################################################
+   Placeholder
+   ############################################################ */
+	/* FF lightens this value, so just use default */
+	.f22 ::-webkit-input-placeholder { color: @gray6; }
+	.f22 :-ms-input-placeholder      { color: @gray6; }
+		
+		/* Chrome is the only ones that obeys the transition */
+		.f22 input:focus::-webkit-input-placeholder { color: @grayA; transition: text-indent 1s 2s ease; text-indent: -100%; }
+		.f22 input:focus::-moz-placeholder          { color: @grayA; }
+		.f22 input:focus:-ms-input-placeholder      { color: @grayA; }
+		
+		.f22 input:hover::-webkit-input-placeholder { color: #000; }
+		.f22 input:hover::-moz-placeholder          { color: #000; }
+		.f22 input:hover:-ms-input-placeholder      { color: #000; }
+		
+		/* FF lightens this value, so just use default */
+		.f22 input[disabled]::-webkit-input-placeholder { color: @grayA; }
+		.f22 input[disabled]:-ms-input-placeholder      { color: @grayA; }
+
+/* ############################################################
+   Selection
+   ############################################################ */
+	::selection {
+		background-color: @blueLight;
+		color: #fff;
 	}
-}
+	::-moz-selection {
+		background-color: @blueLight;
+		color: #fff;
+	}
