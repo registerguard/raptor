@@ -1,5 +1,7 @@
+@import "var";
+
 /* ############################################################
-   Headers > Sans-Serif Class
+   Sans-Serif Class
    ############################################################ */
 	.uh1, .uh2, .uh3, .uh4, .uh5, .uh6, .uh7 {
 		font-family: "BentonSansCond Regular", Arial, sans-serif;
@@ -59,3 +61,58 @@
 	/* 6, 7, 8, 9, 10, 11, 12, 14, 16, 18, 21, 24, 36, 48, 60, 72 */
 	
 	.ps_4 { font-size: 0.25em; /* 4px */ line-height: 3; /* 12px */ margin-bottom: 3em; /* 12px */ }
+	
+
+
+/* ############################################################
+   Reverse Bars
+   ############################################################ */
+	.streamer:before, .streamer:after { content: " "; display: table; } .streamer:after { clear: both; } .streamer { *zoom: 1; }
+	.streamer {
+		margin: 10px 0;
+		
+	}
+		.streamer h1,
+		.streamer h2 {
+			font-family: "BentonSansCond Regular", Arial, sans-serif;
+			font-size: 1em; /* 16px */
+			font-weight: bold;
+			line-height: 2;
+			margin: 0;
+			padding: 0 0.75em;
+			text-transform: uppercase;
+			letter-spacing: .05em;
+		}
+		
+		.streamer h1 {
+			margin-right: 10px;
+			float: left;
+			display: inline;
+		}
+			.streamer h1 a,
+			.streamer h1 span { display: block; }
+		
+		.streamer h2 {
+			overflow: hidden;
+			_height: 1%; /* rgne.ws/12PCNDO */
+		}
+			.streamer h2 a,
+			.streamer h2 span {
+				float: left;
+				display: inline;
+			}
+			.streamer a:link,
+			.streamer a:visited {
+				color: @white;
+				text-decoration: none;
+			}
+		.streamer h1 {
+			color: #aaa;
+			background-color: #333;
+		}
+			.streamer h1:hover{
+				color: #fff;
+				background-color: #000;
+			}
+			.streamer h2 a:link,
+			.streamer h2 a:visited { color: @black; }

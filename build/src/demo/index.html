@@ -8,7 +8,14 @@
 	<meta charset="UTF-8">
 	<title>Raptor | Demo</title>
 	
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	<link rel="stylesheet" href="css/raptor.css">
+	<!-- @endif -->
+	
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<link rel="stylesheet" href="css/raptor.min.css">
+	<!-- @endif -->
+	
 	<link rel="stylesheet" href="css/demo.css">
 	<link rel="stylesheet" href="includes/wiffle/css/wiffle.min.css">
 	<script src="http://static.registerguard.com/v5/bulldog/dist/1.0.0/20130620/1/js/preflight.min.js"></script>
@@ -59,6 +66,10 @@
 				<h1 class="center uh2 m0 white">Headers</h1>
 				
 			</div>
+			
+			include "tmpl/headers/bars.html"
+			
+			<br><br>
 			
 			include "tmpl/headers/ssh.html"
 			

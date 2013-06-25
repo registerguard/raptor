@@ -8,6 +8,13 @@
  * 2) 
  */
 
+
+/* ############################################################
+   Browser-specific elements
+   ############################################################ */
+	::-moz-focus-inner { padding: 0; border: 0; }
+
+
 /* ############################################################
    Icons
    ############################################################ */
@@ -106,11 +113,42 @@
 /* ############################################################
    Selection
    ############################################################ */
-	::selection {
+	.f22 ::selection {
 		background-color: @blueLight;
 		color: #fff;
 	}
-	::-moz-selection {
+	.f22 ::-moz-selection {
 		background-color: @blueLight;
 		color: #fff;
 	}
+
+
+/* ############################################################
+   Select Inputs
+   ############################################################ */
+	.f22 select{
+		display: block;
+		width: 100%;
+		height: 3em;
+		margin: 0 0 1em 0;
+		border: 1px solid @grayA;
+		padding: .75em 1em;
+		font: 0.875em/1 Arial, sans-serif;
+		
+		.transition(all);
+	}
+		.f22 select:focus,
+		.f22 select:focus{
+			border: 1px solid @blueLight;
+			box-shadow: none;
+			-webkit-box-shadow: none;
+		}
+		.f22 option,
+		.f22 optgroup{
+			padding: .75em 1em;
+		}
+		
+		::-ms-expand{
+			border: 1px solid @blueLight;
+			
+		}

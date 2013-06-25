@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 		 * @see http://blog.stevenlevithan.com/archives/date-time-format
 		 */
 		
-		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
+		now : grunt.template.today('yyyy_mm_dd'), // Alternative: yyyymmddhhMMss
 		
 	/* ############################################################
 	   Watch
@@ -217,7 +217,8 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/css/<%= pkg.name %>.min.css' : './src/less/_<%= pkg.name %>.less'
+					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/css/<%= pkg.name %>.min.css' : './src/less/_<%= pkg.name %>.less',
+					'../demo/css/demo.css' : './src/less/demo.less'
 					
 				}
 				
@@ -286,8 +287,10 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'./src/buttons/index.html' : './src/buttons/buttons.html', // destination : source
-					'../demo/index.html'       : '../demo/index.html'
+					// './src/buttons/index.html' : './src/buttons/buttons.html', // destination : source
+					// '../demo/index.html'       : '../demo/index.html'
+					
+					'../demo/index.html' : '../demo/index.html'
 					
 				}
 				
@@ -321,7 +324,7 @@ module.exports = function(grunt) {
 							'js/**/*',
 							'includes/**/*',
 							'img/**/*',
-							'fonts/**/*'
+							'fonts/*.*'
 							
 						],
 						dest : '../demo/'
@@ -355,6 +358,21 @@ module.exports = function(grunt) {
 							
 							'css/<%= pkg.name %>.min.css',
 							'js/<%= pkg.name %>.min.js'
+							
+						],
+						dest : '../demo/'
+						
+					},
+					
+					{
+						
+						expand : true,
+						cwd : './src/',
+						src : [
+							
+							'includes/**/*',
+							'img/**/*',
+							'fonts/*.*'
 							
 						],
 						dest : '../demo/'
@@ -405,8 +423,8 @@ Tasks
 	
 	grunt.registerTask('default', ['jshint']);
 	
-	grunt.registerTask('dev', ['jshint', 'clean:dev', 'less:dev', 'includes', 'copy:dev']);
+	grunt.registerTask('dev', ['jshint', 'clean:dev', 'less:dev', 'includes', 'copy:dev', 'env:dev', 'preprocess:dev']);
 	
-	grunt.registerTask('pro', ['jshint', 'env:pro', 'clean:pro', 'less:pro', 'includes', 'preprocess:pro', 'copy:pro']);
+	grunt.registerTask('pro', ['jshint', 'clean:pro', 'uglify:pro', 'less:pro', 'includes', 'copy:pro', 'env:pro', 'preprocess:pro']);
 	
 };
