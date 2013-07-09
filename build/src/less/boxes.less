@@ -19,6 +19,39 @@
  */
 
 /* ############################################################
+   Fluid Widths
+   * Look into another main namespace besides 'w'
+   ############################################################ */
+	.w1-2 { width: 50%; }
+	.w1-3 { width: 33.33333%; }
+	.w2-3 { width: 66.66666%; }
+	.w1-4 { width: 25%; }
+	.w3-4 { width: 75%; }
+	.w1-5 { width: 20%; }
+	.w2-5 { width: 40%; }
+	.w3-5 { width: 60%; }
+	.w4-5 { width: 80%; }
+	.w1-6 { width: 16.666%; }
+	.w5-6 { width: 83.33%; }
+	.w1-8 { width: 12.5%; }
+	.w3-8 { width: 37.5%; }
+	.w5-8 { width: 62.5%; }
+	.w7-8 { width: 87.5%; }
+	.w1-12 { width: 8.3333%; }
+	.w5-12 { width: 41.6666%; }
+	.w7-12 { width: 58.3333%; }
+	.w11-12 { width: 91.6666%; }
+	.w1-24 { width: 4.1666%; }
+	.w5-24 { width: 20.8333%; }
+	.w7-24 { width: 29.1666%; }
+	.w11-24 { width: 45.8333%; }
+	.w13-24 { width: 54.1666%; }
+	.w17-24 { width: 70.8333%; }
+	.w19-24 { width: 79.1666%; }
+	.w23-24 { width: 95.8333%; }
+
+
+/* ############################################################
    Full box    main modifier1
    ############################################################ */
 	.box0  { margin: 0; padding: 0; }
@@ -29,9 +62,9 @@
 /* ############################################################
    Box-Model Display    main _ modifier1
    ############################################################ */
-	.d_block   { display: block; }
-	.d_inline  { display: inline; }
-	.d_inblock { display: inline-block; }
+	.f22 .d_block, .d_block   { display: block; }
+	.f22 .d_inline, .d_inline  { display: inline; }
+	.f22 .d_inblock, .d_inblock { display: inline-block; }
 
 
 /* ############################################################
@@ -89,6 +122,30 @@
 		.cl_rD { clear: right; }
 		
 	}
+
+
+/* ############################################################
+   Reverse Bar Boxes    main _ modifier1
+   ############################################################ */
+	.bar{
+		width: 100%;
+	}
+		.bar .barbox{
+			overflow: hidden;
+		}
+		
+		.bar .barbox_L,
+		.bar .barbox_R{
+			display: inline;
+		}
+		.bar .barbox_R{
+			float: right;
+			margin-left: 0.625em;
+		}
+		.bar .barbox_L{
+			float: left;
+			margin-right: 0.625em;
+		}
 
 
 /* ############################################################

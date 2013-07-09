@@ -1,0 +1,149 @@
+@import "var";
+
+/* ############################################################
+   Default Buttons
+   ############################################################ */
+	.f22 .button,
+	.f22 .button1{
+		font: 700 .875em Arial, sans-serif;
+		border-radius: 4px;
+		padding: 1em 2em;
+		text-decoration: none;
+		background-color: @blue;
+		color: @white;
+	}
+	.f22 input[type="button"],
+	.f22 button{
+		width: auto;
+		height: auto;
+		border: none;
+	}
+	/* ==============================
+	   Button > Hover States
+	   ============================== */
+		.f22 .button:hover{
+			cursor: pointer;
+			background-color: @blueL1;
+			color: @white
+		}
+
+
+/* ############################################################
+   Buttons Style 1
+   ############################################################ */
+	.f22 .button1{
+		-webkit-box-shadow:  0px 5px 0px 0px @blue;
+		box-shadow:  0px 5px 0px 0px @blue;
+		background-color: @blueL1;
+		color: @white;
+		font-size: .875em;
+	}
+		.f22 .button1:hover{
+			cursor: pointer;
+			-moz-transform: translateY(1px);
+			-webkit-transform: translateY(1px);
+			-o-transform: translateY(1px);
+			-ms-transform: translateY(1px);
+			transform: translateY(1px);
+			-webkit-box-shadow:  0px 4px 0px 0px @blue;
+			box-shadow:  0px 4px 0px 0px @blue;
+		}
+		.f22 .button1:active{
+			-moz-transform: translateY(3px);
+			-webkit-transform: translateY(3px);
+			-o-transform: translateY(3px);
+			-ms-transform: translateY(3px);
+			transform: translateY(3px);
+			-webkit-box-shadow:  0px 2px 0px 0px @blue;
+			box-shadow:  0px 2px 0px 0px @blue;
+		}
+		.f22 .button1:visited,{
+			background-color: darken(@blueL1, 10%);
+		}
+		
+	/* ==============================
+	   Buttons Style 1 > Colors
+	   ============================== */
+		@import "buttons/button1/gray";
+		@import "buttons/button1/tan";
+		@import "buttons/button1/red";
+		@import "buttons/button1/blue";
+		@import "buttons/button1/green";
+		@import "buttons/button1/yellow";
+		@import "buttons/button1/tanC";
+		@import "buttons/button1/redC";
+		@import "buttons/button1/blueC";
+		@import "buttons/button1/greenC";
+		@import "buttons/button1/yellowC";
+
+
+/* ############################################################
+   Buttons Style 2
+   ############################################################ */
+	.f22 .button2,
+	.f22 .button2:visited{
+		padding: 1em 2em;
+		font: 100 .75em Arial, sans-serif;
+		letter-spacing: 0.0625em;
+		text-transform: uppercase;
+		text-decoration: none;
+		color: #333;
+		background-color: #fff;
+		border: 1px solid #333;
+		-webkit-box-shadow:  0px 0px 0px 1px #fff;
+		box-shadow:  0px 0px 0px 1px #fff;
+		.transition;
+		
+	}
+		.f22 .button2:hover,
+		.f22 .button2:visited:hover{
+			cursor: pointer;
+			border-color: @blue;
+			-webkit-box-shadow:  0px 0px 0px 1px @blue;
+			box-shadow:  0px 0px 0px 1px @blue;
+		}
+		.f22 .button2:active,
+		.f22 .button2:visited:active{
+			color: @white;
+			background-color: @blue;
+		}
+		.f22 .button2:visited{
+			background-color: @grayE;
+		}
+		
+	/* ==============================
+	   Buttons Style 2 > Colors
+	   ============================== */
+		@import "buttons/button2/tan";
+		@import "buttons/button2/red";
+		@import "buttons/button2/blue";
+		@import "buttons/button2/green";
+		@import "buttons/button2/yellow";
+		@import "buttons/button2/tanC";
+		@import "buttons/button2/redC";
+		@import "buttons/button2/blueC";
+		@import "buttons/button2/greenC";
+		@import "buttons/button2/yellowC";
+
+
+/* ############################################################
+   Buttons Style 3
+   ############################################################ */
+	.f22 .button3{
+		border: 2px solid #333;
+		letter-spacing: 0.0625em;
+		text-decoration: none;
+		font-weight: bold;
+		border-radius: 0;
+		padding: 1em 2em;
+		.transition;
+	}
+		.f22 .button3:hover{
+			border-color: @blue;
+			color: @blue;
+			background-color: @blueL1;
+			color: #fff;
+		}
+			.f22 .button3:active{
+				background-color: @blue;
+			}

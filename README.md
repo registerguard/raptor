@@ -15,6 +15,10 @@
 **Namespace:** `f22`   
 **Awesome?:** `yes!`
 
+-
+
+**[Baseline Calculator](https://docs.google.com/spreadsheet/ccc?key=0As66WXbDZiJHdEE2bUR5N2NKVGNkWTBKZEFXRXI5M0E&usp=sharing) used for the typography**
+
 *More info coming soon*
 
 ---

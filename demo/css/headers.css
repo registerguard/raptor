@@ -1,0 +1,14 @@
+.uh1,.uh2,.uh3,.uh4,.uh5,.uh6,.uh7{font-family:"BentonSansCond Regular",Arial,sans-serif;font-weight:900;color:#000;margin:0;text-transform:uppercase;}
+.ssh1,.ssh2,.ssh3,.ssh4,.ssh5,.ssh6,.ssh7{font-family:"BentonSansCond Regular",Arial,sans-serif;color:#000;margin:0 ;}
+.sssh1,.sssh2,.sssh3,.sssh4,.sssh5,.sssh6,.sssh7{font-family:Arial,sans-serif;font-weight:normal;color:#666;margin:0;}
+.uh1,.ssh1,.sssh1{font-size:3em;line-height:1.25;margin-bottom:0.5em;}
+.uh2,.ssh2,.sssh2{font-size:2.25em;line-height:1.333333;margin-bottom:0.666667em;}
+.uh3,.ssh3,.sssh3{font-size:1.5em;line-height:1.5;margin-bottom:0.5em;}
+.uh4,.ssh4,.sssh4{font-size:1.3125em;line-height:1.142857;margin-bottom:0.571429em;}
+.uh5,.ssh5,.sssh5{font-size:1.125em;line-height:1.333333;margin-bottom:0.666667em;}
+.uh6,.ssh6,.sssh6{font-size:1em;line-height:1.5;margin-bottom:0.75em;}
+.uh7,.ssh7,.sssh7{font-size:0.875em;line-height:1.714286;margin-bottom:0.857143em;}
+.ps_4{font-size:0.25em;line-height:3;margin-bottom:3em;}
+.header *{font:bold 1em/2 "BentonSansCond Regular",Arial,sans-serif;text-transform:uppercase;letter-spacing:.05em;}
+.header .barbox,.header .barbox_L,.header .barbox_R{padding:0 0.75em;}
+.header a{text-decoration:none;}

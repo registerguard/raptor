@@ -192,12 +192,15 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../demo/css/boxes.css'   : './src/less/boxes.less',
-					'../demo/css/colors.css'  : './src/less/colors.less',
-					'../demo/css/fonts.css'   : './src/less/fonts.less',
-					'../demo/css/form.css'    : './src/less/form.less',
-					'../demo/css/grid.css'    : './src/less/grid.less',
-					'../demo/css/headers.css' : './src/less/headers.less',
+					'../demo/css/boxes.css'      : './src/less/boxes.less',
+					'../demo/css/colors.css'     : './src/less/colors.less',
+					'../demo/css/fonts.css'      : './src/less/fonts.less',
+					'../demo/css/form.css'       : './src/less/form.less',
+					'../demo/css/grid.css'       : './src/less/grid.less',
+					'../demo/css/headers.css'    : './src/less/headers.less',
+					'../demo/css/buttons.css'    : './src/less/buttons.less',
+					'../demo/css/typography.css' : './src/less/typography.less',
+					'../demo/css/utilities.css'  : './src/less/utilities.less',
 					
 					'../demo/css/demo.css' : './src/less/demo.less',
 					
