@@ -16,12 +16,6 @@
 
 
 /* ############################################################
-   Icons
-   ############################################################ */
-	.f22_icon{ font-family: 'raptor-icons'; }
-
-
-/* ############################################################
    Label
    ############################################################ */
 	.f22 label{
@@ -45,7 +39,7 @@
 	.f22 input{
 		position: relative;
 		width: 100%;
-		height: auto;
+		height: 2.85714em; /* Full height / font-size */
 		display: block;
 		margin: 0 0 1em 0;
 		border: 1px solid @grayA;
@@ -68,7 +62,7 @@
 			color: #000;
 		}
 		.f22 input:hover{ border-color: @gray6; }
-		.f22 input:focus{ border-color: @blueLight; }
+		.f22 input:focus{ border-color: @blueL1; }
 	
 	/* ==============================
 	   Text Inputs > IE Conditionals
@@ -99,7 +93,7 @@
 		
 		/* Chrome is the only ones that obeys the transition */
 		.f22 input:focus::-webkit-input-placeholder { color: @grayA; transition: text-indent 1s 2s ease; text-indent: -100%; }
-		.f22 input:focus::-moz-placeholder          { color: @grayA; }
+		.f22 input:focus::-moz-placeholder          { color: @gray3; }
 		.f22 input:focus:-ms-input-placeholder      { color: @grayA; }
 		
 		.f22 input:hover::-webkit-input-placeholder { color: #000; }
@@ -114,11 +108,11 @@
    Selection
    ############################################################ */
 	.f22 ::selection {
-		background-color: @blueLight;
+		background-color: @blueL1;
 		color: #fff;
 	}
 	.f22 ::-moz-selection {
-		background-color: @blueLight;
+		background-color: @blueL1;
 		color: #fff;
 	}
 
@@ -128,8 +122,7 @@
    ############################################################ */
 	.f22 select{
 		display: block;
-		width: 100%;
-		height: 3em;
+		height: 2.857143em;
 		margin: 0 0 1em 0;
 		border: 1px solid @grayA;
 		padding: .75em 1em;
@@ -139,7 +132,7 @@
 	}
 		.f22 select:focus,
 		.f22 select:focus{
-			border: 1px solid @blueLight;
+			border: 1px solid @blueL1;
 			box-shadow: none;
 			-webkit-box-shadow: none;
 		}
@@ -149,6 +142,27 @@
 		}
 		
 		::-ms-expand{
-			border: 1px solid @blueLight;
+			border: 1px solid @blueL1;
 			
+		}
+
+
+/* ############################################################
+   Input with Icon
+   ############################################################ */
+	.f22 .input_icon{
+		position: relative;
+	}
+		.f22 .input_icon input{
+			padding-right: 4em;
+		}
+		.f22 .input_icon input.f22_icon{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: auto;
+			height: 2.85714em;
+			padding: 0.75em 1em;
+			font-family: "raptor-icons";
+			color: #fff;
 		}
