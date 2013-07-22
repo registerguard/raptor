@@ -293,7 +293,10 @@ module.exports = function(grunt) {
 					// './src/buttons/index.html' : './src/buttons/buttons.html', // destination : source
 					// '../demo/index.html'       : '../demo/index.html'
 					
-					'../demo/index.html' : '../demo/index.html'
+					'../demo/index.html'   : '../demo/index.html',
+					'../demo/buttons.html' : '../demo/buttons.html',
+					'../demo/form.html'    : '../demo/form.html',
+					'../demo/headers.html' : '../demo/headers.html'
 					
 				}
 				
