@@ -40,7 +40,6 @@ Thumbs.db
 
 # Project-specific #
 ####################
-
 node_modules
 npm-debug.log
 tmp

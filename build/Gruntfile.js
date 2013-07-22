@@ -131,7 +131,7 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/**/*',
+					'../<%= pkg.name %>/**/*',
 					'../demo/**/*'
 					
 				]
@@ -157,7 +157,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/js/<%= pkg.name %>.min.js' : [
+					'../<%= pkg.name %>/js/<%= pkg.name %>.min.js' : [
 						
 						'./src/**/*.js',
 						'!./src/includes/**/*.js'
@@ -220,7 +220,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/css/<%= pkg.name %>.min.css' : './src/less/_<%= pkg.name %>.less',
+					'../<%= pkg.name %>/css/<%= pkg.name %>.min.css' : './src/less/_<%= pkg.name %>.less',
 					'../demo/css/demo.css' : './src/less/demo.less'
 					
 				}
@@ -270,7 +270,7 @@ module.exports = function(grunt) {
 			options : {
 				
 				context : {
-					path : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>',
+					path : '../<%= pkg.name %>',
 					name : '<%= pkg.name %>'
 				}
 				
@@ -359,7 +359,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : '../<%= pkg.name %>/<%= pkg.version %>/<%= now %>/',
+						cwd : '../<%= pkg.name %>/',
 						src : [
 							
 							'css/<%= pkg.name %>.min.css',
