@@ -383,6 +383,19 @@ module.exports = function(grunt) {
 						],
 						dest : '../demo/'
 						
+					},
+					
+					{
+						
+						expand : true,
+						cwd : './src/',
+						src : [
+							
+							'fonts/*.*'
+							
+						],
+						dest : '../<%= pkg.name %>/'
+						
 					}
 					
 				]
