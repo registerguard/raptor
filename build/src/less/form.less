@@ -43,6 +43,7 @@
 		display: block;
 		margin: 0 0 1em 0;
 		border: 1px solid @grayA;
+		border-radius: 0;
 		padding: .75em 1em;
 		
 		/* FF input line-height bug will override 1.714286 with "normal": */
@@ -124,6 +125,7 @@
 		.f22 input[disabled]::-webkit-input-placeholder { color: @grayA; }
 		.f22 input[disabled]:-ms-input-placeholder      { color: @grayA; }
 
+
 /* ############################################################
    Selection
    ############################################################ */
@@ -136,6 +138,7 @@
 		color: #fff;
 	}
 
+
 /* ############################################################
    Select Inputs
    ############################################################ */
@@ -146,7 +149,7 @@
 		margin: 0 0 1em 0;
 		border: 1px solid @grayA;
 		padding: .75em 1em;
-		font: 0.875em/1 Arial, sans-serif;
+		font: 16px/1 Arial, sans-serif;
 		
 		.transition(all);
 	}
@@ -163,9 +166,20 @@
 		
 		::-ms-expand{
 			border: 1px solid @blueL1;
+		}
+	
+	/* ==============================
+	   Select Inputs > Media Queries
+	   ============================== */
+		@media only screen and (min-width: 665px) {
+			
+			.f22 select{
+				
+				font-size: 0.875em;
+				
+			}
 			
 		}
-
 
 /* ############################################################
    Input with Icon
