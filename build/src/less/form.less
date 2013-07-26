@@ -16,12 +16,6 @@
 
 
 /* ############################################################
-   Browser-specific elements
-   ############################################################ */
-	::-moz-focus-inner { padding: 0; border: 0; }
-
-
-/* ############################################################
    Label
    ############################################################ */
 	.f22 label{
@@ -52,15 +46,19 @@
 		padding: .75em 1em;
 		
 		/* FF input line-height bug will override 1.714286 with "normal": */
-		font: 0.875em/1 Arial, sans-serif;
+		font: 16px/1 Arial, sans-serif;
 		color: @gray3;
 		
 		.transition(all);
 		
+		/* Browser specific styles: */;
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
+		
 		-webkit-font-smoothing: antialiased;
+		
+		-webkit-appearance: none;
 	}
 		.f22 input:hover,
 		.f22 input:focus{
@@ -89,6 +87,22 @@
 			background-color: @grayE;
 			border-color: @grayC;
 		}
+	
+	/* ==============================
+	   Text Inputs > Media Queries
+	   ============================== */
+		@media only screen and (min-width: 665px) {
+			
+			.f22 input{
+				
+				font-size: 0.875em;
+				
+			}
+			
+		}
+		@media only screen and (min-width: 1005px) { }
+		@media only screen and (min-width: 1345px) { }
+
 
 /* ############################################################
    Placeholder
@@ -121,11 +135,6 @@
 		background-color: @blueL1;
 		color: #fff;
 	}
-	.f22 ::-moz-selection {
-		background-color: @blueL1;
-		color: #fff;
-	}
-
 
 /* ############################################################
    Select Inputs
