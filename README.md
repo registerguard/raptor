@@ -12,7 +12,7 @@
 | Project | repo | live URL | host |
 | :-- | :-- | :-- | :-- |
 | **Subscriber Services** | N/A *at the moment* | http://services.registerguard.com/ | `services.registerguard.com`
-| **Marketplace(s)** | [marketplace](https://github.com/registerguard/marketplace) | http://marketplace.registerguard.com/\* | `admanager.registerguard.com` |
+| **Marketplace(s)** | [marketplace](https://github.com/registerguard/marketplace) | http://marketplace.registerguard.com/* | `admanager.registerguard.com` |
 
 ---
 
