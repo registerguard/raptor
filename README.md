@@ -1,4 +1,4 @@
-# F-22 Raptor
+# F-22 Raptor - [Demo](http://registerguard.github.io/raptor/demo/)
 
 ### The non-news sub-theme for The Register-Guard.
 
@@ -6,14 +6,21 @@
 
 ---
 
-### [Demo](http://registerguard.github.io/raptor/demo/)
+### Dependent Projects:
+*list of other projects that rely on `raptor`*
+
+| Project | repo | live URL | host |
+| :-- | :-- | :-- | :-- |
+| **Subscriber Services** | N/A *at the moment* | http://services.registerguard.com/ | `services.registerguard.com`
+| **Marketplace(s)** | https://github.com/registerguard/marketplace | http://marketplace.registerguard.com/\* | `admanager.registerguard.com` |
 
 ---
 
 ### Info
 
 **Namespace:** `f22`   
-**Awesome?:** `yes!`
+**Awesome?:** `yes!`   
+**Hosted location:** `/rgcalendar/advertising/assets/p/raptor/`
 
 -
 
