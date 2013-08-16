@@ -9,10 +9,11 @@
 ### Dependent Projects:
 *list of other projects that rely on `raptor`*
 
-| Project | repo | live URL | host |
+| Project | repo | live URL | host / edit location |
 | :-- | :-- | :-- | :-- |
 | **Subscriber Services** | [subscriber services](https://github.com/registerguard/subscriber-services) | http://services.registerguard.com/ | `services.registerguard.com`
 | **Marketplace(s)** | [marketplace](https://github.com/registerguard/marketplace) | http://marketplace.registerguard.com/* | `admanager.registerguard.com` |
+| **Adicio** | N/A | N/A | `https://sitemanager2.adicio.com/siteManager/templateManager` |
 | **Mobile Apps** | N/A | http://advertising.registerguard.com/p/apps/ | `DOX app - advertising` |
 ---
 
