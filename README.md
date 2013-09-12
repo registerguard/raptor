@@ -14,7 +14,8 @@
 | **Subscriber Services** | [subscriber services](https://github.com/registerguard/subscriber-services) | http://services.registerguard.com/ | `services.registerguard.com`
 | **Marketplace(s)** | [marketplace](https://github.com/registerguard/marketplace) | http://marketplace.registerguard.com/* | `admanager.registerguard.com` |
 | **Adicio** | N/A | N/A | `https://sitemanager2.adicio.com/siteManager/templateManager` |
-| **Mobile Apps** | N/A | http://advertising.registerguard.com/p/apps/ | `DOX app - advertising` |
+| **Mobile Apps** | N/A | [Apps](http://advertising.registerguard.com/p/apps/) | `DOX app - advertising` |
+| **99cent Offer page** | N/A | [99 Offer](http://projects.registerguard.com/pages/99/) | `DOX app - projects` |
 ---
 
 ### Info
