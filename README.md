@@ -1,4 +1,4 @@
-# F-22 Raptor!
+# F-22 Raptor - [Demo](http://registerguard.github.io/raptor/demo/)
 
 ### The non-news sub-theme for The Register-Guard.
 
