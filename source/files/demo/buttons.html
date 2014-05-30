@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Raptor | Buttons Demo</title>
+	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+	<link rel="stylesheet" href="css/buttons.css">
+	<!-- [START] Dependencies -->
+	<link rel="stylesheet" href="css/boxes.css">
+	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/headers.css">
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/typography.css">
+	<link rel="stylesheet" href="css/colors.css">
+	<link rel="stylesheet" href="css/utilities.css">
+	<!-- [END] Dependencies -->
+	<!-- @endif -->
+	<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<link rel="stylesheet" href="css/raptor.min.css">
+	<!-- @endif -->
+</head>
+<body class="f22">
+	include "tmpl/buttons/button.html"
+	include "tmpl/buttons/button1.html"
+	include "tmpl/buttons/button2.html"
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</body>
+</html>

@@ -37,7 +37,7 @@ module.exports = function(grunt) {
 				
 				files : [
 					
-					'./src/**/*',
+					'./files/**/*',
 					
 				],
 				
@@ -132,7 +132,7 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'../<%= pkg.name %>/**/*',
+					'../prod/**/*',
 					'../demo/**/*',
 					
 				],
@@ -158,10 +158,10 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/js/<%= pkg.name %>.min.js' : [
+					'../prod/js/<%= pkg.name %>.min.js' : [
 						
-						'./src/**/*.js',
-						'!./src/includes/**/*.js',
+						'./files/**/*.js',
+						'!./files/includes/**/*.js',
 						
 					],
 					
@@ -193,19 +193,19 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../demo/css/boxes.css'      : './src/less/boxes.less',
-					'../demo/css/colors.css'     : './src/less/colors.less',
-					'../demo/css/fonts.css'      : './src/less/fonts.less',
-					'../demo/css/form.css'       : './src/less/form.less',
-					'../demo/css/grid.css'       : './src/less/grid.less',
-					'../demo/css/headers.css'    : './src/less/headers.less',
-					'../demo/css/buttons.css'    : './src/less/buttons.less',
-					'../demo/css/typography.css' : './src/less/typography.less',
-					'../demo/css/utilities.css'  : './src/less/utilities.less',
+					'../demo/css/boxes.css'      : './files/less/boxes.less',
+					'../demo/css/colors.css'     : './files/less/colors.less',
+					'../demo/css/fonts.css'      : './files/less/fonts.less',
+					'../demo/css/form.css'       : './files/less/form.less',
+					'../demo/css/grid.css'       : './files/less/grid.less',
+					'../demo/css/headers.css'    : './files/less/headers.less',
+					'../demo/css/buttons.css'    : './files/less/buttons.less',
+					'../demo/css/typography.css' : './files/less/typography.less',
+					'../demo/css/utilities.css'  : './files/less/utilities.less',
 					
-					'../demo/css/demo.css' : './src/less/demo.less',
+					'../demo/css/demo.css' : './files/less/demo.less',
 					
-					'../demo/css/<%= pkg.name %>.css' : './src/less/_<%= pkg.name %>.less',
+					'../demo/css/<%= pkg.name %>.css' : './files/less/_<%= pkg.name %>.less',
 					
 				},
 				
@@ -221,8 +221,8 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/css/<%= pkg.name %>.min.css' : './src/less/_<%= pkg.name %>.less',
-					'../demo/css/demo.css' : './src/less/demo.less',
+					'../prod/css/<%= pkg.name %>.min.css' : './files/less/_<%= pkg.name %>.less',
+					'../demo/css/demo.css' : './files/less/demo.less',
 					
 				},
 				
@@ -249,7 +249,7 @@ module.exports = function(grunt) {
 				src: '*.html',
 				dest: '../demo',
 				flatten: true,
-				cwd: './src/demo/',
+				cwd: './files/demo/',
 				
 			},
 			
@@ -293,7 +293,7 @@ module.exports = function(grunt) {
 					
 					'../demo/index.html'   : '../demo/index.html',
 					'../demo/buttons.html' : '../demo/buttons.html',
-					'../demo/form.html'    : '../demo/form.html',
+					'../demo/forms.html'    : '../demo/forms.html',
 					'../demo/headers.html' : '../demo/headers.html',
 					
 				},
@@ -322,7 +322,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : './src/',
+						cwd : './files/',
 						src : [
 							
 							'js/**/*',
@@ -347,7 +347,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : './src/_<% pkg.name %>/',
+						cwd : './files/_<% pkg.name %>/',
 						src : 'index.html',
 						dest : '../demo/',
 						
@@ -357,7 +357,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : '../<%= pkg.name %>/',
+						cwd : '../prod/',
 						src : [
 							
 							'css/<%= pkg.name %>.min.css',
@@ -371,7 +371,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : './src/',
+						cwd : './files/',
 						src : [
 							
 							'includes/**/*',
@@ -387,7 +387,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : './src/',
+						cwd : './files/',
 						src : [
 							
 							'fonts/*.*',
