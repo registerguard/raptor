@@ -1,4 +1,5 @@
-/*global module:false*/
+/* jslint es3: false */
+/* global module:false */
 
 module.exports = function(grunt) {
 	
@@ -36,13 +37,13 @@ module.exports = function(grunt) {
 				
 				files : [
 					
-					'./src/**/*'
+					'./src/**/*',
 					
 				],
 				
-				tasks : ['dev']
+				tasks : ['dev',],
 				
-			}
+			},
 			
 		},
 		
@@ -61,15 +62,15 @@ module.exports = function(grunt) {
 			
 			options : {
 				
-				jshintrc : '.jshintrc'
+				jshintrc : '.jshintrc',
 				
 			},
 			
 			init : [
 				
-				'./Gruntfile.js'
+				'./Gruntfile.js',
 				
-			]
+			],
 			
 		},
 		
@@ -87,15 +88,15 @@ module.exports = function(grunt) {
 			
 			dev : {
 				
-				NODE_ENV : 'DEVELOPMENT'
+				NODE_ENV : 'DEVELOPMENT',
 				
 			},
 			
 			prod : {
 				
-				NODE_ENV : 'PRODUCTION'
+				NODE_ENV : 'PRODUCTION',
 				
-			}
+			},
 			
 		},
 		
@@ -113,7 +114,7 @@ module.exports = function(grunt) {
 			
 			options : {
 				
-				force : true // Sketchy!
+				force : true, // Sketchy!
 				
 			},
 			
@@ -121,9 +122,9 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'../demo/**/*'
+					'../demo/**/*',
 					
-				]
+				],
 				
 			},
 			
@@ -132,11 +133,11 @@ module.exports = function(grunt) {
 				src : [
 					
 					'../<%= pkg.name %>/**/*',
-					'../demo/**/*'
+					'../demo/**/*',
 					
-				]
+				],
 				
-			}
+			},
 			
 		},
 		
@@ -160,13 +161,13 @@ module.exports = function(grunt) {
 					'../<%= pkg.name %>/js/<%= pkg.name %>.min.js' : [
 						
 						'./src/**/*.js',
-						'!./src/includes/**/*.js'
+						'!./src/includes/**/*.js',
 						
-					]
+					],
 					
-				}
+				},
 				
-			}
+			},
 			
 		},
 		
@@ -184,7 +185,7 @@ module.exports = function(grunt) {
 			
 			options : {
 				
-				compress : true
+				compress : true,
 				
 			},
 			
@@ -204,9 +205,9 @@ module.exports = function(grunt) {
 					
 					'../demo/css/demo.css' : './src/less/demo.less',
 					
-					'../demo/css/<%= pkg.name %>.css' : './src/less/_<%= pkg.name %>.less'
+					'../demo/css/<%= pkg.name %>.css' : './src/less/_<%= pkg.name %>.less',
 					
-				}
+				},
 				
 			},
 			
@@ -214,18 +215,18 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					yuicompress : true
+					yuicompress : true,
 					
 				},
 				
 				files : {
 					
 					'../<%= pkg.name %>/css/<%= pkg.name %>.min.css' : './src/less/_<%= pkg.name %>.less',
-					'../demo/css/demo.css' : './src/less/demo.less'
+					'../demo/css/demo.css' : './src/less/demo.less',
 					
-				}
+				},
 				
-			}
+			},
 			
 		},
 		
@@ -248,9 +249,9 @@ module.exports = function(grunt) {
 				src: '*.html',
 				dest: '../demo',
 				flatten: true,
-				cwd: './src/demo/'
+				cwd: './src/demo/',
 				
-			}
+			},
 			
 		},
 		
@@ -271,8 +272,8 @@ module.exports = function(grunt) {
 				
 				context : {
 					path : '../<%= pkg.name %>',
-					name : '<%= pkg.name %>'
-				}
+					name : '<%= pkg.name %>',
+				},
 				
 			},
 			
@@ -280,9 +281,9 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../demo/index.html' : '../demo/index.html'
+					'../demo/index.html' : '../demo/index.html',
 					
-				}
+				},
 				
 			},
 			
@@ -290,17 +291,14 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					// './src/buttons/index.html' : './src/buttons/buttons.html', // destination : source
-					// '../demo/index.html'       : '../demo/index.html'
-					
 					'../demo/index.html'   : '../demo/index.html',
 					'../demo/buttons.html' : '../demo/buttons.html',
 					'../demo/form.html'    : '../demo/form.html',
-					'../demo/headers.html' : '../demo/headers.html'
+					'../demo/headers.html' : '../demo/headers.html',
 					
-				}
+				},
 				
-			}
+			},
 			
 		},
 		
@@ -330,14 +328,14 @@ module.exports = function(grunt) {
 							'js/**/*',
 							'includes/**/*',
 							'img/**/*',
-							'fonts/*.*'
+							//'fonts/*.*',
 							
 						],
-						dest : '../demo/'
+						dest : '../demo/',
 						
-					}
+					},
 					
-				]
+				],
 				
 			},
 			
@@ -350,8 +348,8 @@ module.exports = function(grunt) {
 						
 						expand : true,
 						cwd : './src/_<% pkg.name %>/',
-						src : 'index.html'
-						dest : '../demo/'
+						src : 'index.html',
+						dest : '../demo/',
 						
 					},
 					*/
@@ -363,10 +361,10 @@ module.exports = function(grunt) {
 						src : [
 							
 							'css/<%= pkg.name %>.min.css',
-							'js/<%= pkg.name %>.min.js'
+							'js/<%= pkg.name %>.min.js',
 							
 						],
-						dest : '../demo/'
+						dest : '../demo/',
 						
 					},
 					
@@ -378,31 +376,33 @@ module.exports = function(grunt) {
 							
 							'includes/**/*',
 							'img/**/*',
-							'fonts/*.*'
+							//'fonts/*.*',
 							
 						],
-						dest : '../demo/'
+						dest : '../demo/',
 						
 					},
 					
+					/*
 					{
 						
 						expand : true,
 						cwd : './src/',
 						src : [
 							
-							'fonts/*.*'
+							'fonts/*.*',
 							
 						],
-						dest : '../<%= pkg.name %>/'
+						dest : '../<%= pkg.name %>/',
 						
-					}
+					},
+					*/
 					
-				]
+				],
 				
-			}
+			},
 			
-		}
+		},
 		
 	});
 
@@ -440,10 +440,10 @@ Tasks
 	
 	//----------------------------------
 	
-	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('default', ['jshint',]);
 	
-	grunt.registerTask('dev', ['jshint', 'clean:dev', 'less:dev', 'includes', 'copy:dev', 'env:dev', 'preprocess:dev']);
+	grunt.registerTask('dev', ['jshint', 'clean:dev', 'less:dev', 'includes', 'copy:dev', 'env:dev', 'preprocess:dev',]);
 	
-	grunt.registerTask('prod', ['jshint', 'clean:prod', 'uglify:prod', 'less:prod', 'includes', 'copy:prod', 'env:prod', 'preprocess:prod']);
+	grunt.registerTask('prod', ['jshint', 'clean:prod', 'uglify:prod', 'less:prod', 'includes', 'copy:prod', 'env:prod', 'preprocess:prod',]);
 	
 };
