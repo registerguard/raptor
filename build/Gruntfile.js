@@ -91,7 +91,7 @@ module.exports = function(grunt) {
 				
 			},
 			
-			pro : {
+			prod : {
 				
 				NODE_ENV : 'PRODUCTION'
 				
@@ -127,7 +127,7 @@ module.exports = function(grunt) {
 				
 			},
 			
-			pro : {
+			prod : {
 				
 				src : [
 					
@@ -153,7 +153,7 @@ module.exports = function(grunt) {
 		
 		uglify : {
 			
-			pro : {
+			prod : {
 				
 				files : {
 					
@@ -210,7 +210,7 @@ module.exports = function(grunt) {
 				
 			},
 			
-			pro : {
+			prod : {
 				
 				options : {
 					
@@ -286,7 +286,7 @@ module.exports = function(grunt) {
 				
 			},
 			
-			pro : {
+			prod : {
 				
 				files : {
 					
@@ -341,7 +341,7 @@ module.exports = function(grunt) {
 				
 			},
 			
-			pro : {
+			prod : {
 				
 				files : [
 					
@@ -444,6 +444,6 @@ Tasks
 	
 	grunt.registerTask('dev', ['jshint', 'clean:dev', 'less:dev', 'includes', 'copy:dev', 'env:dev', 'preprocess:dev']);
 	
-	grunt.registerTask('pro', ['jshint', 'clean:pro', 'uglify:pro', 'less:pro', 'includes', 'copy:pro', 'env:pro', 'preprocess:pro']);
+	grunt.registerTask('prod', ['jshint', 'clean:prod', 'uglify:prod', 'less:prod', 'includes', 'copy:prod', 'env:prod', 'preprocess:prod']);
 	
 };
