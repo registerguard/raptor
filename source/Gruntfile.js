@@ -16,7 +16,9 @@ module.exports = function(grunt) {
 		 * @see http://blog.stevenlevithan.com/archives/date-time-format
 		 */
 		
-		now : grunt.template.today('yyyy_mm_dd'), // Alternative: yyyymmddhhMMss
+		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
+		
+		ver : 1, // Increment if more than one build is needed in a single day.
 		
 	/* ############################################################
 	   Watch
@@ -132,8 +134,8 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'../prod/**/*',
 					'../demo/**/*',
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/**/*',
 					
 				],
 				
@@ -158,7 +160,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../prod/js/<%= pkg.name %>.min.js' : [
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/js/<%= pkg.name %>.min.js' : [
 						
 						'./files/**/*.js',
 						'!./files/includes/**/*.js',
@@ -221,8 +223,8 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../prod/css/<%= pkg.name %>.min.css' : './files/less/_<%= pkg.name %>.less',
 					'../demo/css/demo.css' : './files/less/demo.less',
+					'../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/css/<%= pkg.name %>.min.css' : './files/less/_<%= pkg.name %>.less',
 					
 				},
 				
@@ -273,6 +275,9 @@ module.exports = function(grunt) {
 				context : {
 					path : '../<%= pkg.name %>',
 					name : '<%= pkg.name %>',
+					version : '<%= pkg.version %>',
+					now : '<%= now %>',
+					ver : '<%= ver %>',
 				},
 				
 			},
@@ -281,6 +286,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
+					// Why just this file for dev?
 					'../demo/index.html' : '../demo/index.html',
 					
 				},
@@ -291,6 +297,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
+					// Why are these only a production thing?
 					'../demo/index.html'   : '../demo/index.html',
 					'../demo/buttons.html' : '../demo/buttons.html',
 					'../demo/forms.html'    : '../demo/forms.html',
@@ -343,21 +350,10 @@ module.exports = function(grunt) {
 				
 				files : [
 					
-					/*
 					{
 						
 						expand : true,
-						cwd : './files/_<% pkg.name %>/',
-						src : 'index.html',
-						dest : '../demo/',
-						
-					},
-					*/
-					
-					{
-						
-						expand : true,
-						cwd : '../prod/',
+						cwd : '../prod/<%= pkg.version %>/<%= now %>/<%= ver %>/',
 						src : [
 							
 							'css/<%= pkg.name %>.min.css',
@@ -383,21 +379,6 @@ module.exports = function(grunt) {
 						
 					},
 					
-					/*
-					{
-						
-						expand : true,
-						cwd : './files/',
-						src : [
-							
-							'fonts/*.*',
-							
-						],
-						dest : '../<%= pkg.name %>/',
-						
-					},
-					*/
-					
 				],
 				
 			},
@@ -411,39 +392,20 @@ module.exports = function(grunt) {
 Tasks
    ############################################################ */
 	
-	// DEVELOPMENT
 	grunt.loadNpmTasks('grunt-contrib-watch');
-	
-	
-	// JS
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	
-	
-	// MOVE + CLEAN
 	grunt.loadNpmTasks('grunt-contrib-clean');
-	
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	
-	
-	// CSS
 	grunt.loadNpmTasks('grunt-contrib-less');
-	
-	
-	// PREPROCESS + INCLUDES
 	grunt.loadNpmTasks('grunt-preprocess');
-	
 	grunt.loadNpmTasks('grunt-includes');
-	
 	grunt.loadNpmTasks('grunt-env');
 	
 	//----------------------------------
 	
 	grunt.registerTask('default', ['jshint',]);
-	
 	grunt.registerTask('dev', ['jshint', 'clean:dev', 'less:dev', 'includes', 'copy:dev', 'env:dev', 'preprocess:dev',]);
-	
 	grunt.registerTask('prod', ['jshint', 'clean:prod', 'uglify:prod', 'less:prod', 'includes', 'copy:prod', 'env:prod', 'preprocess:prod',]);
 	
 };
