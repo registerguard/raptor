@@ -329,8 +329,7 @@ module.exports = function(grunt) {
 							
 							'js/**/*',
 							'includes/**/*',
-							'img/**/*',
-							'fonts/*.*'
+							'img/**/*'
 							
 						],
 						dest : '../demo/'
@@ -377,24 +376,10 @@ module.exports = function(grunt) {
 						src : [
 							
 							'includes/**/*',
-							'img/**/*',
-							'fonts/*.*'
+							'img/**/*'
 							
 						],
 						dest : '../demo/'
-						
-					},
-					
-					{
-						
-						expand : true,
-						cwd : './src/',
-						src : [
-							
-							'fonts/*.*'
-							
-						],
-						dest : '../<%= pkg.name %>/'
 						
 					}
 					
