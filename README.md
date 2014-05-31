@@ -1,4 +1,4 @@
-# F-22 Raptor - [Demo](http://registerguard.github.io/raptor/demo/)
+# F-22 Raptor! - [Demo](http://registerguard.github.io/raptor/demo/)
 
 ### The non-news sub-theme for The Register-Guard.
 
@@ -6,8 +6,13 @@
 
 ---
 
-### Dependent Projects:
-*list of other projects that rely on `raptor`*
+### Author note:
+
+Officially, as of May, 2014, Raptor is hosted on static.registerguard.com. All future and current projects should absolutely link to this new hosted location.
+
+---
+
+### Projects that are Raptor-dependent:
 
 | Project | repo | live URL | host / edit location |
 | :-- | :-- | :-- | :-- |
